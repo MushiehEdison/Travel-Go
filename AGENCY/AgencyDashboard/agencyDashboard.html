@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="agencyDashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Travel Agency Dashboard</title>
+</head>
+<body>
+        <!-- Collapsible Navbar for Small Screens -->
+        <nav class="navbar navbar-expand-md navbar-light d-md-none">
+            <a class="navbar-brand" href="agencyDashboard.html">Travel Agency</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="agencyDashboard.html"><i class="fa-solid fa-house mx-2"></i> Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/manageProfile.html"><i class="fa-solid fa-user mx-2"></i>Manage Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/routesSchedule.html"><i class="fa-solid fa-calendar-days mx-2"></i>Schedules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/feedback.html"><i class="fas fa-comments mx-2"></i>Feedbacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/ppromotion.html"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/statictics.html"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/setting.html"><i class="fa-solid fa-gear mx-2"></i>Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <!-- Sidebar for Large Screens -->
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <a href="agencyDashboard.html"><li class="nav-item"><i class="fa-solid fa-house mx-2"></i> Overview</li></a>
+                            <a href="/travelagencydashboardComponents/manageProfile.html"><li class="nav-item"><i class="fa-solid fa-user mx-2"></i>Manage Profile</li></a>
+                            <a href="/travelagencydashboardComponents/routesSchedule.html"><li class="nav-item"><i class="fa-solid fa-calendar-days mx-2"></i> Schedules</li></a>
+                            <a href="/travelagencydashboardComponents/feedback.html"><li class="nav-item"><i class="fas fa-comments mx-2"></i>Feedbacks</li></a>
+                            <a href="/travelagencydashboardComponents/ppromotion.html"><li class="nav-item"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</li></a>
+                            <a href="/travelagencydashboardComponents/statictics.html"><li class="nav-item"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</li></a>
+                            <a href="/travelagencydashboardComponents/setting.html"><li class="nav-item"><i class="fa-solid fa-gear mx-2"></i>Settings</li></a>
+                        </ul>
+                    </div>
+                </nav>
+                <main role="main" class="col-md-9 ml-sm-auto main-content px-4">
+                    <div class="header d-flex justify-content-between align-items-center m-5">
+                        <h1 class="h2">Dashboard Overview</h1>
+                        <div class="user-info d-flex align-items-center">
+                            <img src="a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="User Profile Picture" class="rounded-circle mr-2" width="80" height="80">
+                            <span class="user-name">Spectrasoft</span>
+                        </div>
+                    </div>
+                    <div class="row gy-4">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="mainsubSection text-center p-3 bg-light shadow rounded">
+                                <span class="icon d-block mb-2">
+                                    <i class="fa-solid fa-globe fa-3x text-primary"></i>
+                                </span>
+                                <h4 class="sectionDescription mb-1">Total Bookings</h4>
+                                <p class="Value fs-3 fw-bold">1,245</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="mainsubSection text-center p-3 bg-light shadow rounded">
+                                <span class="icon d-block mb-2">
+                                    <i class="fa-solid fa-money-bills fa-3x text-success"></i>
+                                </span>
+                                <h4 class="sectionDescription mb-1">Daily Revenue</h4>
+                                <p class="Value fs-5 fw-bold">510,230 F CFA</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="mainsubSection text-center p-3 bg-light shadow rounded">
+                                <span class="icon d-block mb-2">
+                                    <i class="fa-solid fa-star fa-3x text-warning"></i>
+                                </span>
+                                <h4 class="sectionDescription mb-1">Average User Rating</h4>
+                                <p class="Value fs-5 fw-bold mb-1">3.5</p>
+                                <span class="stars">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    <i class="fa-solid fa-star-half-stroke text-warning"></i>
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- <div class="col-sm-6 col-lg-4">
+                            <div class="mainsubSection text-center p-3 bg-light shadow rounded">
+                                <h4 class="sectionDescription mb-2">Notifications</h4>
+                                <p>Check your notifications here.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="routes my-5 mx-4">
+                        <h4>Live Travel Routes</h4>
+                        <p class="mb-3">
+                            Below is the map showing the directions for all scheduled journeys today. 
+                            The markers indicate the starting and ending points, while the travel engines' 
+                            current positions are shown in real time.
+                        </p>
+                        <div id="map" style="height: 500px; width: 100%;" class="rounded shadow"></div>
+                    </div>
+                    
+                    
+                </main>
+                
+                <!-- Right Section -->
+                <aside class="col-md d-none d-md-block rightSection">
+                    <div class="sideSection recentActivities">
+                        <div class="recent-activities shadow rounded bg-light p-3">
+                            <h5 class="text-center mb-3">Recent Activities</h5>
+                            <div class="activity d-flex align-items-start mb-3">
+                                <div class="icon text-primary me-2">
+                                    <i class="fa-solid fa-calendar-check fa-lg"></i>
+                                </div>
+                                <div class="details">
+                                    <p class="mb-1"><strong>New Booking</strong>: John Doe booked a ride to Airport.</p>
+                                    <small class="text-muted">5 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="activity d-flex align-items-start mb-3">
+                                <div class="icon text-success me-2">
+                                    <i class="fa-solid fa-car fa-lg"></i>
+                                </div>
+                                <div class="details">
+                                    <p class="mb-1"><strong>Car Departed</strong>: Ride #123 departed to Downtown.</p>
+                                    <small class="text-muted">10 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="activity d-flex align-items-start mb-3">
+                                <div class="icon text-warning me-2">
+                                    <i class="fa-solid fa-tools fa-lg"></i>
+                                </div>
+                                <div class="details">
+                                    <p class="mb-1"><strong>Maintenance Scheduled</strong>: Car #45 scheduled for maintenance.</p>
+                                    <small class="text-muted">30 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-sm btn-outline-primary">View All Activities</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Map initialization centered around Cameroon
+        const map = L.map('map').setView([3.848, 11.5021], 6); // Centered on Cameroon
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Example travel data within Cameroon with specific buses and destinations
+        const travelRoutes = [
+            {
+                busName: "Bus A - Yaoundé Express",  // Bus Name
+                start: { lat: 3.848, lng: 11.5021 }, // Yaoundé
+                end: { lat: 4.0511, lng: 9.7085 }, // Douala
+                current: { lat: 3.841, lng: 11.5023 }, // Current location near Yaoundé
+                destination: "Douala"
+            },
+            {
+                busName: "Bus B - Buea Connection", // Bus Name
+                start: { lat: 5.958, lng: 10.1591 }, // Buea
+                end: { lat: 3.848, lng: 11.5021 }, // Yaoundé
+                current: { lat: 5.967, lng: 10.1700 }, // Current location near Buea
+                destination: "Yaoundé"
+            },
+            {
+                busName: "Bus C - Coastal Voyager", // Bus Name
+                start: { lat: 4.2833, lng: 9.7015 }, // Kribi
+                end: { lat: 4.0833, lng: 9.7000 }, // Limbe
+                current: { lat: 4.2556, lng: 9.6932 }, // Current location near Kribi
+                destination: "Limbe"
+            },
+            {
+                busName: "Bus D - Northern Explorer", // Bus Name
+                start: { lat: 6.158, lng: 10.1579 }, // Garoua
+                end: { lat: 5.9513, lng: 10.1572 }, // Maroua
+                current: { lat: 6.1421, lng: 10.1520 }, // Current location near Garoua
+                destination: "Maroua"
+            }
+        ];
+
+        let currentMarker; // Marker to represent the current location of the vehicle
+
+        // Function to fetch and draw routes
+        async function fetchRoute(start, end) {
+            const url = `https://router.project-osrm.org/route/v1/driving/${start.lng},${start.lat};${end.lng},${end.lat}?overview=full&geometries=geojson`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.routes && data.routes.length > 0) {
+                    const routeCoordinates = data.routes[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+                    const routeLine = L.polyline(routeCoordinates, { color: 'blue', weight: 3 }).addTo(map);
+                    map.fitBounds(routeLine.getBounds());
+                }
+            } catch (error) {
+                console.error('Error fetching route:', error);
+            }
+        }
+
+        // Function to add markers for start and end points
+        function addRouteMarkers(route) {
+            L.marker(route.start).addTo(map).bindPopup(`${route.busName} - Start Point`).openPopup();
+            L.marker(route.end).addTo(map).bindPopup(`${route.busName} - End Point`);
+        }
+
+        // Function to update the current location of the vehicle
+        function updateCurrentLocation(newLocation, routeIndex) {
+            if (currentMarker) {
+                map.removeLayer(currentMarker); // Remove the old marker
+            }
+            currentMarker = L.marker(newLocation, { icon: L.divIcon({ className: `current-marker-${routeIndex}`, html: '🚌', iconSize: [20, 20] }) })
+                .addTo(map)
+                .bindPopup(`Current Location of ${travelRoutes[routeIndex].busName}`)
+                .openPopup();
+        }
+
+        // Simulate real-time updates
+        function simulateMovement(route, routeIndex) {
+            const waypoints = [
+                { lat: 3.841, lng: 11.5023 }, // Near Yaoundé
+                { lat: 4.0511, lng: 9.7085 }, // Douala
+                { lat: 4.2333, lng: 10.3000 }, // Buea
+                { lat: 3.848, lng: 11.5021 }  // Yaoundé (back)
+            ];
+
+            let index = 0;
+
+            const interval = setInterval(() => {
+                if (index >= waypoints.length) {
+                    clearInterval(interval); // Stop when the destination is reached
+                } else {
+                    updateCurrentLocation(waypoints[index], routeIndex);
+                    index++;
+                }
+            }, 3000); // Update every 3 seconds
+        }
+
+        // Draw the route, add markers, and simulate movement for all journeys
+        travelRoutes.forEach((route, index) => {
+            fetchRoute(route.start, route.end); // Fetch and draw the route
+            addRouteMarkers(route); // Add start and end markers
+            updateCurrentLocation(route.current, index); // Set initial current location
+            simulateMovement(route, index); // Simulate movement along the waypoints
+        });
+    </script>
+    
+</body>
+</html>

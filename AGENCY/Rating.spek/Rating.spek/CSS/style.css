@@ -1,0 +1,299 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+  /* styling Rating */
+  .Rating{
+    text-align: center;
+  }
+  .Rating-stars{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    font-size: x-large;
+    
+  }
+  .link{
+    text-decoration: none;
+    position: relative;
+    right: 20%;
+    color: lightskyblue;
+    
+  }
+  /* styling Rating end */
+
+  /* styling the whole container */
+  
+  .review-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  /* styling the whole container ends */
+  /* styling the main header start */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* styling the whhole container ends */
+  /* styling text after header start */
+  
+  .info {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 10px 0;
+  }
+  /* styling text after header ends */
+
+  /* styling the whole rating container start */
+  .rating-overview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  /* styling the whole rating container ends*/
+
+  /* styling the h1 of rating score start */
+  .rating-score h1 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 300;
+  }
+  /* styling the h1 of rating score  end*/
+
+/* styling logo */
+ .logo {
+  margin-right: 20%;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 
+                 0 0 20px rgba(33, 150, 243, 0.5), 
+                 0 0 30px rgba(33, 150, 243, 0.3);
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s infinite alternate ease-in-out;
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 
+                   0 0 20px rgba(33, 150, 243, 0.5), 
+                   0 0 30px rgba(33, 150, 243, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 15px rgba(33, 150, 243, 1), 
+                   0 0 30px rgba(33, 150, 243, 0.8), 
+                   0 0 45px rgba(33, 150, 243, 0.6);
+    }
+  }
+/* styling logo */
+
+
+
+/* adding styles to the stars  under rating score*/
+  .rating-score .except{
+    color:  lightskyblue;
+  }
+/* adding styles to the stars  under rating score*/
+
+/* styling  the paragraph in rating start */
+  .rating-score p{
+    font-size: 14px;
+    color: #b3b3b3;
+  }
+/* styling  the paragraph in rating  end*/
+
+/* styling the rating  chart start */
+  .rating-bar {
+    flex: 1;
+  }
+  
+  .bar {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .bar span {
+    width: 20px;
+  }
+  
+  .progress {
+    height: 10px;
+    background-color: lightskyblue;
+    margin-left: 10px;
+    flex: 1;
+    border-radius: 20px;
+  }
+/* styling the rating  chart end */
+
+/* styling the whole review div start */
+
+  .star{
+    color:  lightskyblue;
+  }
+  
+  .reviews {
+    margin-top: 10px;
+  }
+  
+  .review {
+    background-color: #dfdfdf;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  h4{
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .review-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .review-text {
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .helpful {
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .helpful-buttons button {
+    position: relative;
+    left:  80%;
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #1e1e1e;
+    border: 1px solid  #b3b3b3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .helpful-buttons p{
+    font-size: 14px;
+    color: #000000;
+    position: relative;
+    top: 50px;
+  }
+/* styling the whole review div end */
+
+/* Responsiveness */
+
+/* large screen */
+@media(min-width:992px){
+  .review-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+}
+/* medium screen */
+@media screen and (min-width :768px) and (max-width:991px){
+  .review-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .review-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+/* small screen */
+@media screen  and (min-width :576px) and (max-width:767px){
+  .review-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .logo {
+    margin-right: 10%;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 
+                   0 0 20px rgba(33, 150, 243, 0.5), 
+                   0 0 30px rgba(33, 150, 243, 0.3);
+      background: linear-gradient(90deg, #4caf50, #2196f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate ease-in-out;
+    }
+    .review-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+}
+/* x-small screen */
+@media(max-width:575px){
+  .review-container {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .helpful-buttons button {
+    position: relative;
+    left:  60%;
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #1e1e1e;
+    border: 1px solid  #b3b3b3;
+    color: white;
+    cursor: pointer;
+  }
+  .link{
+    text-decoration: none;
+    position: relative;
+    right: 30%;
+    top: 10%;
+  }
+  
+  .logo {
+    margin-right: 10%;
+      font-family: Arial, sans-serif;
+      font-size: 5px;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 
+                   0 0 20px rgba(33, 150, 243, 0.5), 
+                   0 0 30px rgba(33, 150, 243, 0.3);
+      background: linear-gradient(90deg, #4caf50, #2196f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate ease-in-out;
+    }
+    .review-header img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+}
+  

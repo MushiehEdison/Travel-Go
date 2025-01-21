@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    
+    <div class="container">
+        <!-- sidebar navigation-->
+         <nav class="sidebar">
+            <!-- Back Button -->
+<div class="mt-4 max-w-4xl mx-auto">
+    <button 
+      onclick="history.back()" 
+      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+      &larr; Back
+    </button>
+  </div>
+            <ul>
+                <li><a href="setting.html">Account Settings</a></li>
+                <li><a href="preferences.html">Booking Preferences</a></li>
+                <li><a href="app_settings.html">App Settings</a></li>
+                <li><a href="pri_sec.html" class="toggle-section">Privacy & Security</a></li>
+                <li><a href="feed_sup.html">Feedback & Support</a></li>
+                <li><a href="system_info.html">System Information</a></li>
+            </ul>
+         </nav>
+         <!-- Main Content -->
+          <main class="main-content">
+            
+        <!-- ====Privacy and Security section==== -->
+        <section id="privacy-security">
+            <h2>Privacy and Security</h2>
+            <!-- form for privacy and security begins -->
+             <form>
+               <label for="privacy-settings">Manage Privacy Settings</label>
+               <!-- select for privacy settings -->
+                <select name="privacy-settings" id="privacy-settings">
+                   <option value="all-data-sharing">All Data Sharing</option>
+                   <option value="do-not-share-data">Do Not Share Data</option>
+                </select>
+                <!-- select for privacy settings ends here -->
+                 <label for="location-tracking">Enable Location Tracking</label>
+                 <!-- input for location tracking -->
+                  <input type="checkbox" name="location-tracking" id="location-tracking">
+                  <label for="two-factor-auth">Enable Two-Factor Authentication (2FA)</label>
+                  <input type="checkbox" name="two-factor-auth" id="two-factor-auth">
+
+                  <label for="session-management">Session Management</label>
+                  <button type="submit">Save Privacy Settings</button>
+             </form>
+         </section>
+         <!-- end of privacy and security -->
+           </main>
+           </div>
+           
+</body>
+</html>

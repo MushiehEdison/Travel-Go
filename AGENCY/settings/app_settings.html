@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- sidebar navigation-->
+         <nav class="sidebar">
+            <!-- Back Button -->
+<div class="mt-4 max-w-4xl mx-auto">
+    <button 
+      onclick="history.back()" 
+      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+      &larr; Back
+    </button>
+  </div>
+            <ul>
+                <li><a href="setting.html">Account Settings</a></li>
+                <li><a href="preferences.html">Booking Preferences</a></li>
+                <li><a href="app_settings.html">App Settings</a></li>
+                <li><a href="pri_sec.html" class="toggle-section">Privacy & Security</a></li>
+                <li><a href="feed_sup.html">Feedback & Support</a></li>
+                <li><a href="system_info.html">System Information</a></li>
+            </ul>
+         </nav>
+         <!-- Main Content -->
+          <main class="main-content">
+            
+        <!--=== App Settings Sections ===-->
+            <h2>App Settings</h2>
+            <!-- form for app settings begins -->
+             <form>
+                <label for="theme">Theme Selection</label>
+                <!-- select theme section begins -->
+                 <select name="theme" id="theme">
+                    <option value="light-mode">Light Mode</option>
+                    <option value="dark-mode">Dark Mode</option>
+                 </select>
+                 <!-- theme select section ends -->
+                  <label for="language">Language Options</label>
+                  <!-- selection section for language begins -->
+                   <select name="language" id="language">
+                    <option value="english">English</option>
+                    <option value="french">French</option>
+                   </select>
+                   <!-- select section for language ends here -->
+                    <label for="region-currency">Region and Currency</label>
+                    <!-- select section for region and currency -->
+                     <select name="region-currency" id="region-currency">
+                        <option value="usd">USD - United States</option>
+                        <option value="xaf">XAF - Cameroon</option>
+                        <option value="eur">EUR - Europe</option>
+                     </select>
+                     <!-- select section for region and currency ends here -->
+                      <button type="submit">Save App Settings</button>
+             </form>
+           </main>
+           </div>
+           
+</body>
+</html>

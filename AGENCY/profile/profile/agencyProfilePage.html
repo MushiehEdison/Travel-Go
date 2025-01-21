@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Profile Page</title>
+    <link rel="stylesheet" href="agencyProfilePageStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .navbar {
+            background-color: #000000;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+        .section-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .card img {
+            object-fit: cover;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">AgencyLogo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services-section">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq-section">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Overview Section -->
+<main class="sec">
+
+<section id="overview" class="section bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 descript ">
+                <div class="agency-logo ">
+                    <img src="a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="">
+                </div>
+                <div class="logo text-center">
+                    <i class="fas fa-globe-americas logo mb-3"></i>
+                    <h2 class="section-title">Explore the World with Us</h2>
+                    <p class="lead">Your journey starts here. Discover safe and affordable travel options tailored just for you.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bus-info text-center">
+                    <h3 class="bus-title"><i class="fas fa-bus"></i> Next Bus Destination</h3>
+                    <p class="bus-details">Douala to Yaoundé</p>
+                    <p class="bus-time"><i class="fas fa-clock"></i> Departs: 08:00 AM</p>
+                    <div id="map"><i class="fas fa-map-marker-alt"></i> Map will go here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="social-media ">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+</section>
+
+    
+    
+    
+
+    <!-- Services Section -->
+    <section id="services-section" class="section bg-light">
+        <div class="container">
+            <h2 class="services-section-title">Services Offered</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="services-card">
+                        <img src="Screenshot 2024-11-08 191654.png" class="services-card-img-top" alt="Intercity Travel">
+                        <div class="services-card-body">
+                            <div class="services-card-icon text-center">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <h5 class="services-card-title">Intercity Travel</h5>
+                            <p class="services-card-text">Comfortable travel between major cities.</p>
+                            <div class="services-card-details">
+                                <p>Enjoy our top-notch service that ensures you reach your destination comfortably and safely. We offer regular routes between all major cities with flexible schedules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-card">
+                        <img src="Screenshot 2024-11-08 191733.png" class="services-card-img-top" alt="Package Delivery">
+                        <div class="services-card-body">
+                            <div class="services-card-icon text-center">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h5 class="services-card-title">Package Delivery</h5>
+                            <p class="services-card-text">Secure and timely delivery services.</p>
+                            <div class="services-card-details">
+                                <p>We provide reliable package delivery services. Whether it's a small parcel or large shipment, we ensure timely and secure delivery to your desired location.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-card">
+                        <img src="c07430d5-555b-437f-9391-711483c06f7a.jpeg" class="services-card-img-top" alt="Charter Services">
+                        <div class="services-card-body">
+                            <div class="services-card-icon text-center">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="services-card-title">Charter Services</h5>
+                            <p class="services-card-text">Customized travel solutions for groups.</p>
+                            <div class="services-card-details">
+                                <p>Our charter services provide customized travel solutions for groups. Whether it's a corporate event, school trip, or family reunion, we have you covered.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Bus Services ---------------- -->
+   <section id="bus-services" class="section bg-light">
+    <div class="container">
+        <h2 class="bus-services-title">Vehicle Services</h2>
+        <div class="row">
+            <!-- VIP Bus Service -->
+            <div class="col-md-4 col-12 mb-4">
+                <h3 class="service-title">VIP Vehicle Service</h3>
+                <p>Experience luxury travel with our VIP buses, featuring comfortable seats, entertainment, and complimentary refreshments.</p>
+                <div class="imgCtn">
+                    <img src="pexels-rescriptt-rescriptt-101153900-23119645.jpg" alt="VIP Bus" class="service-image">
+
+                </div>
+            </div>
+            <!-- Economy Bus Service -->
+            <div class="col-md-4 col-12 mb-4">
+                <h3 class="service-title">Economy Bus Service</h3>
+                <p>Our economy buses offer affordable travel options with basic amenities for budget-conscious travelers.</p>
+                <div class="imgCtn">
+                    <img src="pexels-janine-speidel-1933619854-29869022.jpg" alt="Economy Bus" class="service-image">
+
+                </div>
+            </div>
+            <!-- Standard Bus Service -->
+            <div class="col-md-4 col-12 mb-4">
+                <h3 class="service-title">Standard Bus Service</h3>
+                <p>Enjoy a comfortable journey with our standard buses, equipped with air conditioning and spacious seating.</p>
+                <div class="imgCtn">
+                       <img src="pexels-duran-ekiz-177082092-16364220.jpg" alt="Standard Bus" class="service-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section bg-light">
+        <div class="container">
+            <h2 class="booking-section-title">Booking and Availability</h2>
+            <p class="booking-section-description text-center">Check real-time availability and book your seat now!</p>
+            <form class="row g-3 booking-form">
+                <div class="col-md-4">
+                    <label for="departure" class="form-label">Departure</label>
+                    <input type="text" class="form-control" id="departure" placeholder="City or Location">
+                </div>
+                <div class="col-md-4">
+                    <label for="arrival" class="form-label">Arrival</label>
+                    <input type="text" class="form-control" id="arrival" placeholder="City or Location">
+                </div>
+                <div class="col-md-4">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Search Availability</button>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <!-- Feedback Section -->
+    <section id="feedback" class="section bg-light py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Feedback and Ratings</h2>
+            <p class="text-center mb-5">See what our customers have to say about us!</p>
+
+            <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Feedback Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="testimonial">
+                            <p>"This agency transformed our vision into reality with their exceptional service! We couldn't be happier with the results!"</p>
+                        </div>
+                        <img src="https://via.placeholder.com/70" alt="Customer Image" class="customer-img">
+                        <div class="feedback-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="customer-name">Jane Doe</p>
+                        <p class="customer-position">CEO, Tech Innovations</p>
+                    </div>
+
+                    <!-- Feedback Item 2 -->
+                    <div class="carousel-item">
+                        <div class="testimonial">
+                            <p>"Amazing experience! The team was professional, dedicated, and exceeded our expectations."</p>
+                        </div>
+                        <img src="https://via.placeholder.com/70" alt="Customer Image" class="customer-img">
+                        <div class="feedback-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">John Smith</p>
+                        <p class="customer-position">Founder, Creative Labs</p>
+                    </div>
+
+                    <!-- Feedback Item 3 -->
+                    <div class="carousel-item">
+                        <div class="testimonial">
+                            <p>"Excellent service and incredible results. Highly recommend this agency!"</p>
+                        </div>
+                        <img src="https://via.placeholder.com/70" alt="Customer Image" class="customer-img">
+                        <div class="feedback-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">Emily Johnson</p>
+                        <p class="customer-position">Marketing Manager, Bright Ideas Co.</p>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="text-center">
+                <a href="../../Rating.spek/Rating.spek/index.html"><button class="btn btn-primary read-more-reviews">Read More Reviews</button></a>
+            </div>
+        </div>
+    </section>
+<!-- FAQ section -->
+<section id="faq-section" class="section bg-light">
+    <div class="container">
+        <h2 class="faq-section-title">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the best time to travel?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The best time to travel depends on your destination and preferences. Generally, spring and fall offer mild weather and fewer tourists.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can I book a trip?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can book a trip through our website by selecting your destination, dates, and preferences. Our customer service team is also available to assist you with bookings.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What payment methods do you accept?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We accept various payment methods including credit/debit cards, PayPal, and bank transfers.
+                    </div>
+                </div>
+            </div>
+            <!-- More FAQ items as needed -->
+        </div>
+
+        <!-- Question Submission -->
+        <div class="faq-question">
+            <h3 class="faq-question-title">Have more questions?</h3>
+            <form id="questionForm" class="row g-3">
+                <div class="col-12">
+                    <label for="question" class="form-label">Ask your question</label>
+                    <textarea class="form-control" id="question" rows="3" placeholder="Type your question here"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Submit Question</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="faq-contact">
+            <h3 class="faq-contact-title">Contact Us</h3>
+            <p>Feel free to contact us for any inquiries or support. We're here to help!</p>
+            <div class="row contact-info">
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>Phone:</strong> +123-456-7890</p>
+                </div>
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>Email:</strong> contact@travelagency.com</p>
+                </div>
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Address:</strong> 123 Travel St, Adventure City, Country</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+</main>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+    <script> // Initialize the map 
+    var map = L.map('map').setView([4.0511, 9.7679], 13); // Set the initial view to Douala, Cameroon // Add OpenStreetMap tiles 
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); // Add a marker to the map 
+    var marker = L.marker([4.0511, 9.7679]).addTo(map) .bindPopup('Next Bus Destination: Douala to Yaoundé') .openPopup(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact page</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../dist/boostrap.css">
+  <style>
+  </style>
+</head>
+<body>
+  
+<!-- form section -->
+ <div class="container mt-5">
+  <div class="row">
+  <div class="contact-container">
+    <div class="left-col">
+      <span class="logo"> TravelGO</span>
+    </div>
+    <div class="right-col">
+      <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+    </label>
+    <div class="description" >Dark Mode</div>
+  </div>
+      
+      <h1>Contact us</h1>
+      <p>Planning to visit Indonesia soon? Get insider tips on where to go, things to do and find best deals for your next adventure.</p>
+      
+      <form id="contact-form" method="post">
+        <label for="name">Full name</label>
+    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+        <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+        <label for="message">Message</label>
+    <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+        <button type="submit" id="submit" name="submit" class="submit mt-3">Send</button>
+    
+  </form>
+  <div id="error"></div>
+  <div id="success-msg"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="header"><br><br>
+  <hr><h2 class="main"> LET'S EXPLORE THE WORLD</h2><hr>
+  <h6>Travel Go is an excellent platform for exploring and implementing your travel-related needs. It's user-friendly, versatile, and tailored to elevate your projects to the next level. You're on the right track, and we are here to assist you every step of the way!"</h6>
+</div>
+
+<!-- contact details section -->
+<div class="container ">
+  <div class="row">
+  <div class="contact-section">
+    <div class="map-container" id="map">
+      <img src="./image/Screenshot 2025-01-11 070830.png" alt="map" width="600px">
+    </div>
+    <div class="contact-details">
+      <h2>Contact Details</h2>
+      <p><strong>Company Name:</strong>Travel Go</p>
+      <p><strong>Address:</strong> Douala, Cameroon</p>
+      <p><strong>Phone:</strong> +237 6XX XXX XXX</p>
+      <p><strong>Email:</strong> <a href="mailto:info@travelgo.com">info@travelgo.com</a></p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./script.js"></script>
+<script src="../dist/boostrap.js"></script>
+<script src="../dist/boostrappopper.js"></script>
+
+
+</body>
+</html>

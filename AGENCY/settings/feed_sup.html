@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    
+    <div class="container">
+        <!-- sidebar navigation-->
+         <nav class="sidebar">
+            <!-- Back Button -->
+<div class="mt-4 max-w-4xl mx-auto">
+    <button 
+      onclick="history.back()" 
+      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+      &larr; Back
+    </button>
+  </div>
+            <ul>
+                <li><a href="setting.html">Account Settings</a></li>
+                <li><a href="preferences.html">Booking Preferences</a></li>
+                <li><a href="app_settings.html">App Settings</a></li>
+                <li><a href="pri_sec.html" class="toggle-section">Privacy & Security</a></li>
+                <li><a href="feed_sup.html">Feedback & Support</a></li>
+                <li><a href="system_info.html">System Information</a></li>
+            </ul>
+         </nav>
+         <!-- Main Content -->
+          <main class="main-content">
+            <!-- ====Feedback and Support section begins here======== -->
+                   <!-- section for feedback and support -->
+                    <h2>Feedback and Support</h2>
+                    <!-- form for feedback and support begins here -->
+                     <form>
+                        <label for="app-feedback">Rate the App</label>
+                     <textarea name="app-feedback" id="app-feedback" placeholder="Share your experience with us...."></textarea>
+                     <label for="contact-support">Contact Support</label>
+                     <!-- input for contact support -->
+                      <input type="email" name="contact-support" id="contact-support" placeholder="Enter your email for support">
+                      <button type="submit">Submit Feedback</button>
+                     </form>
+                     <!-- end of form for feedback... -->
+                      <h4>FAQs</h4>
+                      <p>View answers to common questions about using the app.</p>
+                <!-- end of feedback and support section -->
+           </main>
+           </div>
+           
+</body>
+</html>
