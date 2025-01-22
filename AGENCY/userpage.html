@@ -27,8 +27,8 @@
       <a href="#search" class="block p-3 hover:bg-gray-700"><i class="fas fa-search mr-2"></i> Search Trip</a>
       <a href="#outboard-bus" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-2"></i> Outboard Bus</a>
       <a href="#other-agencies" class="block p-3 hover:bg-gray-700"><i class="fas fa-building mr-2"></i> Other Agencies</a>
-      <a href="#available-seats" class="block p-3 hover:bg-gray-700"><i class="fas fa-chair mr-2"></i> Available Seats</a>
       <a href="more_destinations.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
+      <a href="recent/recent/recent.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
       <a href="./settings/setting.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
     </nav>
 
@@ -41,20 +41,44 @@
   </div>
 
   <!-- Main Content -->
-  <div class="ml-64 p-8">
-    <!-- Search Section -->
-    <div id="search" class="bg-gray-700 p-4 mb-8">
-      <div class="flex justify-center space-x-4">
-        <input class="p-2 rounded" type="text" placeholder="Your Location" />
-        <input class="p-2 rounded" type="text" placeholder="Destination" />
-        <button class="bg-black text-white p-2 rounded">
-          <i class="fas fa-search"></i> Search
-        </button>
+  <div class="ml-64 p-4">
+    <div class="relative h-[300px]">
+      <!-- Background Video -->
+      <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+        <source src="Travel_Agency_Logo_Advert(720p).mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/30"></div>
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col items-center justify-center h-full space-y-6">
+        <!-- Title -->
+        <h1 class="text-white text-4xl font-bold">TravelGO</h1>
+        <!-- Search Bar -->
+        <div class="flex items-center space-x-4 p-4 bg-gray-100/90 rounded-lg shadow-lg">
+          <input class="p-2 rounded-lg w-40" type="text" placeholder="Destination" />
+          <input class="p-2 rounded-lg w-40" type="text" placeholder="Your Location" />
+          <input class="p-2 rounded-lg w-40" type="date" id="dateInput" placeholder="Date of Book" />
+          <button class="bg-black text-white p-2 rounded-lg flex items-center space-x-2">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </button>
+        </div>
       </div>
     </div>
+    <!-- current date script -->
+    <script>
+      // Get the current date
+      const today = new Date();
+      const formattedDate = today.toISOString().split('T')[0];
+  
+      // Set the value of the input to the current date
+      document.getElementById('dateInput').value = formattedDate;
+    </script>
+
 
     <!-- Outboard Bus Section -->
-    <div id="outboard-bus">
+    <div id="outboard-bus" class="mt-5">
       <div class="flex justify-between items-center">
         <h2 class="text-xl font-bold">OUTBOARD BUS</h2>
         <button class="bg-gray-200 p-2 rounded">
@@ -78,7 +102,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr data-href="booking.html" class="cursor-pointer"> 
+            <tr data-href="booking.html" class="cursor-pointer hover:bg-gray-100 transition"> 
             
               <td class="border px-4 py-2">
                 <span class="bg-danger text-white px-2 py-1 rounded">03/11/2024</span>
@@ -94,7 +118,7 @@
             
               
             </tr>
-            <tr data-href="booking.html" class="cursor-pointer">
+            <tr data-href="booking.html" class="cursor-pointer hover:bg-gray-100 transition">
               <td class="border px-4 py-2" >
                 <span class="bg-green-500 text-white px-2 py-1 rounded">03/12/2024</span>
               </td>
@@ -109,6 +133,7 @@
             </tr>
           </tbody>
         </table>
+        <!-- table script -->
         <script>
           document.querySelectorAll('tr[data-href]').forEach(row => {
             row.addEventListener('click', () => {
@@ -119,60 +144,194 @@
       </div>
     </div>
 
-    <!-- Other Agencies Section -->
-    <div id="other-agencies" class="mt-8">
-      <center><h2 class="text-4xl font-bold mb-4">Other Agencies</h2></center>
-      <div class="bg-gray-300 p-8 text-center">
-        <div id="slider" class="relative overflow-hidden h-80">
-          <div class="flex transition-transform duration-500" style="transform: translateX(0%);">
-            <!-- Slide 1 -->
-            <div class="w-full flex-shrink-0 text-center">
-              <div class="relative h-full">
-                <img src="images/1.jpg" alt="BUS Booking Services" class="object-cover w-full h-full rounded-md" />
-                <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded">
-                  <h2 class="text-3xl font-bold">Easy BUS Bookings</h2>
-                  <p class="text-lg">Plan your journey with ease and convenience.</p>
-                </div>
-              </div>
+<!-- Other Agencies Section -->
+<div id="other-agencies" class="mt-12 bg-gray-100 py-12">
+  <div class="container mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h2 class="text-4xl font-bold text-gray-800">Explore Agencies</h2>
+      <p class="text-lg text-gray-600 mt-2">Discover more trusted travel and booking services.</p>
+    </div>
+
+    <!-- Carousel -->
+    <div id="slider" class="relative overflow-hidden">
+      <!-- Slides Wrapper -->
+      <div class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%);">
+        <!-- Slide 1 -->
+        <div class="min-w-full flex-shrink-0 px-4">
+          <div class="relative group h-80 bg-gradient-to-b from-gray-200 to-gray-400 rounded-md shadow-lg">
+            <img src="profile/profile/pexels-eray-karatas-756165405-29148345.jpg" alt="Agency 1" class="absolute inset-0 w-full h-full object-cover rounded-md group-hover:opacity-90 transition-opacity" />
+            <div class="absolute inset-0 bg-black/30 rounded-md"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-3xl font-bold">Easy BUS Bookings</h3>
+              <p class="text-lg mt-1">Plan your journey with ease and convenience.</p>
+              <button class="mt-4 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-semibold transition">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="min-w-full flex-shrink-0 px-4">
+          <div class="relative group h-80 bg-gradient-to-b from-gray-200 to-gray-400 rounded-md shadow-lg">
+            <img src="images/3.webp" alt="Agency 2" class="absolute inset-0 w-full h-full object-cover rounded-md group-hover:opacity-90 transition-opacity" />
+            <div class="absolute inset-0 bg-black/30 rounded-md"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-3xl font-bold">Luxury Coach Services</h3>
+              <p class="text-lg mt-1">Travel in comfort and style with top-notch services.</p>
+              <button class="mt-4 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-semibold transition">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-full flex-shrink-0 px-4">
+          <div class="relative group h-80 bg-gradient-to-b from-gray-200 to-gray-400 rounded-md shadow-lg">
+            <img src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" alt="Agency 3" class="absolute inset-0 w-full h-full object-cover rounded-md group-hover:opacity-90 transition-opacity" />
+            <div class="absolute inset-0 bg-black/30 rounded-md"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-3xl font-bold">Affordable Trips</h3>
+              <p class="text-lg mt-1">Budget-friendly options for your next adventure.</p>
+              <button class="mt-4 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-semibold transition">View More</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-   <!-- Available Seats Section -->
-<div id="available-seats" class="mt-8">
-  <center><h2 class="text-4xl font-bold mb-4">Available Seats</h2></center>
+      <!-- Carousel Controls -->
+      <button id="prevSlide" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="nextSlide" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Trip Section -->
+<div id="trip" class="mt-8">
+  <h2 class="text-4xl font-bold my-5">Top Travel Agencies</h2>
+  <div class="location-r1">
+    <h3 class="text-2xl font-bold my-5"> From Douala</h3>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+    <!-- Trip Card 1 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <img alt="Publicity image" class="w-full" height="200" src="profile/profile/c07430d5-555b-437f-9391-711483c06f7a.jpeg" width="300" />
       <div class="p-4">
+        <!-- Trip Route -->
         <h3 class="text-lg font-bold">Douala - Yaounde</h3>
-        <p>from 4000 XAF</p>
-        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-2">
-          <i class="fas fa-check-circle"></i>
+        <!-- Travel Agency Name -->
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Prestige Travel</span></p>
+        <!-- Price, VIP Badge, and Star Icon -->
+        <p class="flex items-center mt-2">
+          <span>from 4000 XAF</span>
+          <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+            <i class="fas fa-star mr-1"></i> VIP
+          </span>
+        </p>
+        <!-- Booking Button -->
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
           <a href="booking.html">Book Now</a>
         </button>
       </div>
     </div>
+
+    <!-- Trip Card 2 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <img alt="Publicity image" class="w-full" height="200" src="profile/profile/Screenshot 2024-11-08 191550.png" width="300" />
       <div class="p-4">
-        <h3 class="text-lg font-bold">Douala - Yaounde</h3>
-        <p>from 4000 XAF</p>
-        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-2">
-          <i class="fas fa-check-circle"></i>
+        <h3 class="text-lg font-bold">Douala - Bafoussam</h3>
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Elite Voyages</span></p>
+        <p class="flex items-center mt-2">
+          <span>from 3500 XAF</span>
+        </p>
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
           <a href="booking.html">Book Now</a>
         </button>
       </div>
     </div>
+
+    <!-- Trip Card 3 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <img alt="Publicity image" class="w-full" height="200" src="profile/profile/akaza.jpeg" width="300" />
       <div class="p-4">
-        <h3 class="text-lg font-bold">Douala - Yaounde</h3>
-        <p>from 4000 XAF</p>
-        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-2">
-          <i class="fas fa-check-circle"></i>
+        <h3 class="text-lg font-bold">Douala - Bamenda</h3>
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Royal Express</span></p>
+        <p class="flex items-center mt-2">
+          <span>from 5000 XAF</span>
+          <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+            <i class="fas fa-star mr-1"></i> VIP
+          </span>
+        </p>
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
+          <a href="booking.html">Book Now</a>
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="location-r2">
+    <h3 class="text-2xl font-bold my-5"> From Garoua</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+    <!-- Trip Card 1 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img alt="Publicity image" class="w-full" height="200" src="profile/profile/Screenshot 2024-11-08 191733.png" width="300" />
+      <div class="p-4">
+        <!-- Trip Route -->
+        <h3 class="text-lg font-bold">Garoua - Kribi</h3>
+        <!-- Travel Agency Name -->
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Prestige Travel</span></p>
+        <!-- Price, VIP Badge, and Star Icon -->
+        <p class="flex items-center mt-2">
+          <span>from 7000 XAF</span>
+          <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+            <i class="fas fa-star mr-1"></i> VIP
+          </span>
+        </p>
+        <!-- Booking Button -->
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
+          <a href="booking.html">Book Now</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- Trip Card 2 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img alt="Publicity image" class="w-full" height="200" src="profile/profile/Screenshot 2024-11-08 191654.png" width="300" />
+      <div class="p-4">
+        <h3 class="text-lg font-bold">Garoua - Yaounde</h3>
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Elite Voyages</span></p>
+        <p class="flex items-center mt-2">
+          <span>from 3500 XAF</span>
+          <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+            <i class="fas fa-star mr-1"></i> VIP
+          </span>
+        </p>
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
+          <a href="booking.html">Book Now</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- Trip Card 3 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img alt="Publicity image" class="w-full" height="200" src="profile/profile/Screenshot 2024-11-08 185128.png" width="300" />
+      <div class="p-4">
+        <h3 class="text-lg font-bold">Garoua - Maroua</h3>
+        <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Royal Express</span></p>
+        <p class="flex items-center mt-2">
+          <span>from 1000 XAF</span>
+        </p>
+        <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+          <i class="fas fa-check-circle mr-2"></i>
           <a href="booking.html">Book Now</a>
         </button>
       </div>
@@ -183,20 +342,19 @@
 
   <!-- Slider Script -->
   <script>
-    const slider = document.getElementById('slider');
-    const slides = slider.querySelector('div.flex');
-    let currentIndex = 0;
+const slider = document.querySelector("#slider .flex");
+let index = 0;
 
-    function updateSlider() {
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+document.querySelector("#prevSlide").addEventListener("click", () => {
+  index = (index > 0) ? index - 1 : 2; // Loop back to the last slide
+  slider.style.transform = `translateX(-${index * 100}%)`;
+});
 
-    function autoSlide() {
-      currentIndex = (currentIndex < slides.children.length - 1) ? currentIndex + 1 : 0;
-      updateSlider();
-    }
+document.querySelector("#nextSlide").addEventListener("click", () => {
+  index = (index < 2) ? index + 1 : 0; // Loop back to the first slide
+  slider.style.transform = `translateX(-${index * 100}%)`;
+});
 
-    setInterval(autoSlide, 3000);
   </script>
 </body>
 
