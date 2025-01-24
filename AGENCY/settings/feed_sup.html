@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
-
-    
     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
+      
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
             <!-- Back Button -->
-<div class="mt-4 max-w-4xl mx-auto">
-    <button 
-      onclick="history.back()" 
-      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-      &larr; Back
-    </button>
-  </div>
+            <!-- Home Icon -->
+            <div class="home-icon mt-4 max-w-4xl mx-auto">
+              <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                  <i class="fa fa-home"></i> Home
+              </a>
+          </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -29,27 +29,31 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-            <!-- ====Feedback and Support section begins here======== -->
-                   <!-- section for feedback and support -->
-                    <h2>Feedback and Support</h2>
-                    <!-- form for feedback and support begins here -->
-                     <form>
-                        <label for="app-feedback">Rate the App</label>
-                     <textarea name="app-feedback" id="app-feedback" placeholder="Share your experience with us...."></textarea>
-                     <label for="contact-support">Contact Support</label>
-                     <!-- input for contact support -->
-                      <input type="email" name="contact-support" id="contact-support" placeholder="Enter your email for support">
-                      <button type="submit">Submit Feedback</button>
-                     </form>
-                     <!-- end of form for feedback... -->
-                      <h4>FAQs</h4>
-                      <p>View answers to common questions about using the app.</p>
-                <!-- end of feedback and support section -->
-           </main>
-           </div>
-           
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Feedback and Support Section -->
+            <h2>Feedback and Support</h2>
+            <!-- Form for Feedback and Support -->
+            <form>
+                <label for="app-feedback">Rate the App</label>
+                <textarea name="app-feedback" id="app-feedback" placeholder="Share your experience with us..."></textarea>
+                <label for="contact-support">Contact Support</label>
+                <input type="email" name="contact-support" id="contact-support" placeholder="Enter your email for support">
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <h4>FAQs</h4>
+            <p>View answers to common questions about using the app.</p>
+        </main>
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
 </body>
 </html>

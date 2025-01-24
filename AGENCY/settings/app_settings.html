@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
-            <!-- Back Button -->
-<div class="mt-4 max-w-4xl mx-auto">
-    <button 
-      onclick="history.back()" 
-      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-      &larr; Back
-    </button>
-  </div>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <!-- Home Icon -->
+            <div class="home-icon mt-4 max-w-4xl mx-auto">
+              <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                  <i class="fa fa-home"></i> Home
+              </a>
+          </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -27,40 +27,41 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-            
-        <!--=== App Settings Sections ===-->
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- App Settings Section -->
             <h2>App Settings</h2>
-            <!-- form for app settings begins -->
-             <form>
+            <!-- Form for App Settings -->
+            <form>
                 <label for="theme">Theme Selection</label>
-                <!-- select theme section begins -->
-                 <select name="theme" id="theme">
+                <select name="theme" id="theme">
                     <option value="light-mode">Light Mode</option>
                     <option value="dark-mode">Dark Mode</option>
-                 </select>
-                 <!-- theme select section ends -->
-                  <label for="language">Language Options</label>
-                  <!-- selection section for language begins -->
-                   <select name="language" id="language">
+                </select>
+                <label for="language">Language Options</label>
+                <select name="language" id="language">
                     <option value="english">English</option>
                     <option value="french">French</option>
-                   </select>
-                   <!-- select section for language ends here -->
-                    <label for="region-currency">Region and Currency</label>
-                    <!-- select section for region and currency -->
-                     <select name="region-currency" id="region-currency">
-                        <option value="usd">USD - United States</option>
-                        <option value="xaf">XAF - Cameroon</option>
-                        <option value="eur">EUR - Europe</option>
-                     </select>
-                     <!-- select section for region and currency ends here -->
-                      <button type="submit">Save App Settings</button>
-             </form>
-           </main>
-           </div>
-           
+                </select>
+                <label for="region-currency">Region and Currency</label>
+                <select name="region-currency" id="region-currency">
+                    <option value="usd">USD - United States</option>
+                    <option value="xaf">XAF - Cameroon</option>
+                    <option value="eur">EUR - Europe</option>
+                </select>
+                <button type="submit">Save App Settings</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
 </body>
 </html>

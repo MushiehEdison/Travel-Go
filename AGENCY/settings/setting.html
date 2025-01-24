@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Setting</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body bgcolor="#f3f4f5">
-
-  
-
-     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
-            <!-- Back Button -->
-<div class="mt-4 max-w-4xl mx-auto">
-   <button 
-     onclick="history.back()" 
-     class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-     &larr; Back
-   </button>
- </div>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <!-- Home Icon -->
+            <div class="home-icon mt-4 max-w-4xl mx-auto">
+                <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                    <i class="fa fa-home"></i> Home
+                </a>
+            </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -29,47 +26,65 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-             <!-- Account Settings section -->
-              <section id="account-settings">
-                <!-- ===h3 for account settings -->
-                 <h2>Account Settings</h2>
-                 <!-- form for account setting begins-->
-                 <form>
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Account Settings section -->
+            <section id="account-settings">
+                <h2>Account Settings</h2>
+                <!-- Form for account setting begins -->
+                <form>
                     <h3>Edit Profile</h3>
                     <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name"  required>
+                    <input type="text" name="name" id="name" required>
                     <label for="phone">Phone Number</label>
                     <input type="tel" name="phone" id="phone" required>
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email"  required>
+                    <input type="email" name="email" id="email" required>
                     <label for="profile-pic">Profile Picture</label>
-                    <input type="file" name="profile-pic" id="profile-pic">
+                    <input type="file" name="profile-pic" id="profile-pic" accept="image/*" onchange="previewImage(event)">
+                    <img id="profile-pic-preview" src="#" alt="Profile Picture Preview" style="display: none; margin-top: 1rem; max-width: 500px;">
                     <h4>Change Password</h4>
                     <label for="new-password">New Password</label>
                     <input type="password" name="new-password" id="new-password" placeholder="Enter new password">
                     <label for="confirm-password">Confirm New Password</label>
                     <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm new password">
                     <h4>Delete Account</h4>
-                    <!-- paragraph for warning an irreversible action -->
-                     <p>This action is irreversible. Please confirm</p>
+                    <p>This action is irreversible. Please confirm</p>
                     <button type="button" class="delete-account-btn" aria-label="Delete Account">Delete Account</button>
-
                     <button type="submit">Save Changes</button>
-                 </form>
-              </section>
-              <!-- end of form for account settings -->
+                </form>
+            </section>
+            <!-- End of form for account settings -->
+            <!-- =============FOOTER================= -->
+            <footer>
+                <button class="cancel-btn" aria-label="Cancel">Cancel</button>
+                <button class="save-btn" aria-label="Save All Changes">Save ALL Changes</button>
+            </footer>
+        </main>
+    </div>
 
-              
-               
-                      <!-- =============FOOTER================= -->
-                       <footer>
-                        <button class="cancel-btn" aria-label="Cancel">Cancel</button>
-                        <button class="save-btn" aria-label="Save All Changes">Save ALL Changes</button>
-                       </footer>
-          </main>
-     </div>
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
+
+    <!-- JavaScript to preview image -->
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const reader = new FileReader();
+            reader.onload = function() {
+                const img = document.getElementById('profile-pic-preview');
+                img.src = reader.result;
+                img.style.display = 'block';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
 </body>
 </html>

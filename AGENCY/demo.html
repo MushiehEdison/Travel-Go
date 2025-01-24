@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>TravelGO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navigation</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 body {
@@ -20,22 +17,18 @@ body {
 .sidebar {
   width: 100%;
   max-width: 250px;
-  background-color: #2d3748;
+  background-color: #000000;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
-  overflow-y: scroll;
 }
-.sidebar::-webkit-scrollbar{
-    display: none;
-}
+
 .sidebar-content {
-  padding: 0.5em;
+  padding: 1rem;
 }
 
 .logo-section {
@@ -59,6 +52,36 @@ body {
   height: 40px;
   margin-right: 10px;
 }
+
+.nav-links {
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #4a5568;
+}
+
+.nav-links a:hover {
+  background-color: #4a5568;
+}
+
+.logout {
+  padding: 1rem 0;
+  border-top: 1px solid #4a5568;
+}
+
+.logout a {
+  color: #e53e3e;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
 .mobile-nav {
   display: none;
   position: fixed;
@@ -72,6 +95,7 @@ body {
   align-items: center;
   z-index: 10;
 }
+
 .mobile-nav a {
   display: flex;
   flex-direction: column;
@@ -79,6 +103,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
 .mobile-nav a span {
   font-size: 0.75rem;
   margin-top: 0.25rem;
@@ -92,10 +117,6 @@ body {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  body{
-    margin: 0;
-    padding: 0;
-  }
   .sidebar {
     display: none;
   }
@@ -105,27 +126,8 @@ body {
   }
 
   .main-content {
-    margin: 0;
-    padding: 0;
     margin-left: 0;
     padding-bottom: 4rem; /* Space for the mobile nav */
-  }
-  .header{
-    height: 800px;
-  }
-  .section{
-    margin: 1em;
-  }
-
-  /* Make user-info appear only on small screens */
-  .user-info {
-    display: flex;
-  }
-
-  /* Add additional styling for user-info on small screens if needed */
-  .user-info img.avatar {
-    width: 64px;
-    height: 64px;
   }
 }
 
@@ -134,24 +136,25 @@ body {
 <body>
   <div class="sidebar">
     <!-- Sidebar Content -->
-      <div class="logo-section my-4">
+    <div class="sidebar-content">
+      <div class="logo-section">
         TravelGO
       </div>
       <div class="user-info">
         <img src="images/5.JPG" alt="User avatar" class="avatar">
         <div>Hello, Spectrasoft!<br>Let's Book your next BUS</div>
       </div>
-      <nav class="mt-4 flex-grow">
-        <a href="userpage.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-home mr-2"></i> Home</a>
-        <a href="upcomingTrip.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-2"></i> Upcoming Trips</a>
-        <a href="more_destinations.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
-        <a href="recent/recent/recent.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
-        <a href="./settings/setting.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
+      <nav class="nav-links">
+        <a href="#search"><i class="fas fa-search mr-2"></i> Search Trip</a>
+        <a href="upcomingTrip.html"><i class="fas fa-bus mr-2"></i> Upcoming Trips</a>
+        <a href="more_destinations.html"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
+        <a href="recent/recent/recent.html"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
+        <a href="./settings/setting.html"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
       </nav>
-      <div class="p-4 border-t border-gray-700">
-        <a href="#logout" class="flex items-center text-red-500 hover:text-red-400"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+      <div class="logout">
+        <a href="#logout"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
       </div>
-
+    </div>
   </div>
   
   <!-- Mobile Navigation -->
@@ -166,7 +169,7 @@ body {
   <!-- Main Content -->
   <div class="main-content">
     <div class="">
-      <div class="relative h-[500px] md:h-[300px]">
+      <div class="relative h-[300px]">
         <!-- Background Video -->
         <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
           <source src="Travel_Agency_Logo_Advert(720p).mp4" type="video/mp4" />
@@ -176,15 +179,10 @@ body {
         <div class="absolute inset-0 bg-black/30"></div>
         <!-- Content -->
         <div class="relative z-10 flex flex-col items-center justify-center h-full space-y-6">
-          <!-- User Info (Small Screens Only) -->
-          <div class="user-info sm:hidden flex flex-col items-center text-white">
-            <img src="images/5.JPG" alt="User avatar" class="avatar rounded-full w-16 h-16 mb-2">
-            <div class="text-center">Hello, Spectrasoft!<br>Let's Book your next BUS</div>
-          </div>
           <!-- Title -->
           <h1 class="text-white text-2xl md:text-4xl font-bold">TravelGO</h1>
           <!-- Search Bar -->
-          <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 p-4 rounded-lg shadow-lg w-full max-w-screen-md">
+          <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 p-4 bg-gray-100/90 rounded-lg shadow-lg w-full max-w-screen-md">
             <input class="p-2 rounded-lg w-full md:flex-1" type="text" placeholder="Destination" />
             <input class="p-2 rounded-lg w-full md:flex-1" type="text" placeholder="Your Location" />
             <input class="p-2 rounded-lg w-full md:flex-1" type="date" id="dateInput" placeholder="Date of Book" />
@@ -195,8 +193,6 @@ body {
           </div>
         </div>
       </div>
-      
-      
 
         
         <!-- current date script -->
@@ -209,8 +205,8 @@ body {
           document.getElementById('dateInput').value = formattedDate;
         </script>
     
-    <div class="section">
-      <!-- Outboard Bus Section -->
+    
+        <!-- Outboard Bus Section -->
         <div id="outboard-bus" class="mt-5">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold">OUTBOARD BUS</h2>
@@ -276,8 +272,8 @@ body {
             </script>
           </div>
         </div>
-      </div>
-<!-- Other Agencies Section -->
+    
+    <!-- Other Agencies Section -->
     <div id="other-agencies" class="mt-12 bg-gray-100 py-12">
       <div class="container mx-auto">
         <!-- Header -->
@@ -340,8 +336,9 @@ body {
         </div>
       </div>
     </div>
-<div class="section">
-   <!-- Trip Section -->
+    
+    
+     <!-- Trip Section -->
     <div id="trip" class="mt-8">
       <h2 class="text-4xl font-bold my-5">Top Travel Agencies</h2>
       <div class="location-r1">
@@ -405,12 +402,13 @@ body {
         </button>
       </div>
     </div>
-</div>
-</div>
     
- <div class="location-r2">
+      </div>
+      </div>
+      <div class="location-r2">
         <h3 class="text-2xl font-bold my-5"> From Garoua</h3>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
        <!-- Trip Card 1 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <img alt="Publicity image" class="w-full h-48 object-cover" src="profile/profile/Screenshot 2024-11-08 191550.png" />
@@ -433,8 +431,6 @@ body {
         </button>
       </div>
     </div>
-
-
     
     <!-- Trip Card 2 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -490,8 +486,5 @@ body {
     
       </script>
   </div>
-</div>
-</div>
-
 </body>
 </html>

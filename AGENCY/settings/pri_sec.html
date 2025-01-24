@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
-
-    
     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
             <!-- Back Button -->
-<div class="mt-4 max-w-4xl mx-auto">
-    <button 
-      onclick="history.back()" 
-      class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-      &larr; Back
-    </button>
-  </div>
+            <!-- Home Icon -->
+            <div class="home-icon mt-4 max-w-4xl mx-auto">
+              <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                  <i class="fa fa-home"></i> Home
+              </a>
+          </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -29,35 +28,37 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-            
-        <!-- ====Privacy and Security section==== -->
-        <section id="privacy-security">
-            <h2>Privacy and Security</h2>
-            <!-- form for privacy and security begins -->
-             <form>
-               <label for="privacy-settings">Manage Privacy Settings</label>
-               <!-- select for privacy settings -->
-                <select name="privacy-settings" id="privacy-settings">
-                   <option value="all-data-sharing">All Data Sharing</option>
-                   <option value="do-not-share-data">Do Not Share Data</option>
-                </select>
-                <!-- select for privacy settings ends here -->
-                 <label for="location-tracking">Enable Location Tracking</label>
-                 <!-- input for location tracking -->
-                  <input type="checkbox" name="location-tracking" id="location-tracking">
-                  <label for="two-factor-auth">Enable Two-Factor Authentication (2FA)</label>
-                  <input type="checkbox" name="two-factor-auth" id="two-factor-auth">
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Privacy and Security Section -->
+            <section id="privacy-security">
+                <h2>Privacy and Security</h2>
+                <!-- Form for Privacy and Security -->
+                <form>
+                    <label for="privacy-settings">Manage Privacy Settings</label>
+                    <select name="privacy-settings" id="privacy-settings">
+                        <option value="all-data-sharing">All Data Sharing</option>
+                        <option value="do-not-share-data">Do Not Share Data</option>
+                    </select>
+                    <label for="location-tracking">Enable Location Tracking</label>
+                    <input type="checkbox" name="location-tracking" id="location-tracking">
+                    <label for="two-factor-auth">Enable Two-Factor Authentication (2FA)</label>
+                    <input type="checkbox" name="two-factor-auth" id="two-factor-auth">
+                    <label for="session-management">Session Management</label>
+                    <button type="submit">Save Privacy Settings</button>
+                </form>
+            </section>
+        </main>
+    </div>
 
-                  <label for="session-management">Session Management</label>
-                  <button type="submit">Save Privacy Settings</button>
-             </form>
-         </section>
-         <!-- end of privacy and security -->
-           </main>
-           </div>
-           
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
 </body>
 </html>

@@ -1,17 +1,23 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <!-- Home Icon -->
+            <div class="home-icon mt-4 max-w-4xl mx-auto">
+                <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                    <i class="fa fa-home"></i> Home
+                </a>
+            </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -20,28 +26,27 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-            
-       <!-- =============System Information Section=========== -->
-                     <!-- system info section begins here -->
-                     <section id="system-info">
-                        <h2>System Information</h2>
-                         <p><strong>App Version:</strong> 1.5.3</p>
-                        <p><strong>Last Update:</strong> 12/20/2024</p>
-                         <p><strong>Uptime:</strong> 99.9%</p>
-                          <button type="button" class="check-updates-btn" aria-label="Check for Updates">Check for Updates</button>
-                     </section>
-                     <!-- end of system info section -->
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- System Information Section -->
+            <section id="system-info">
+                <h2>System Information</h2>
+                <p><strong>App Version:</strong> 1.5.3</p>
+                <p><strong>Last Update:</strong> 12/20/2024</p>
+                <p><strong>Uptime:</strong> 99.9%</p>
+                <button type="button" class="check-updates-btn" aria-label="Check for Updates">Check for Updates</button>
+            </section>
+        </main>
+    </div>
 
-           </main>
-           </div>
-           
-</body>
-</html>
-           </main>
-           </div>
-           
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
 </body>
 </html>

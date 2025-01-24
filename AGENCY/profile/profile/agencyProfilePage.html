@@ -6,6 +6,7 @@
     <title>Agency Profile Page</title>
     <link rel="stylesheet" href="agencyProfilePageStyle.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -147,34 +148,41 @@
         <h2 class="bus-services-title">Vehicle Services</h2>
         <div class="row">
             <!-- VIP Bus Service -->
-            <div class="col-md-4 col-12 mb-4">
-                <h3 class="service-title">VIP Vehicle Service</h3>
-                <p>Experience luxury travel with our VIP buses, featuring comfortable seats, entertainment, and complimentary refreshments.</p>
-                <div class="imgCtn">
-                    <img src="pexels-rescriptt-rescriptt-101153900-23119645.jpg" alt="VIP Bus" class="service-image">
-
+            <section id="bus-services" class="section bg-light">
+                <div class="container">
+                    <h2 class="bus-services-title">Vehicle Services</h2>
+                    <div class="row">
+                        <!-- VIP Bus Service -->
+                        <div class="col-md-4 col-12 mb-4">
+                            <h3 class="service-title">VIP Vehicle Service</h3>
+                            <p>Experience luxury travel with our VIP buses, featuring comfortable seats, entertainment, and complimentary refreshments.</p>
+                            <div class="imgCtn">
+                                <img src="pexels-rescriptt-rescriptt-101153900-23119645.jpg" alt="VIP Bus" class="service-image" style="height: 300px; width: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <!-- Economy Bus Service -->
+                        <div class="col-md-4 col-12 mb-4">
+                            <h3 class="service-title">Economy Bus Service</h3>
+                            <p>Our economy buses offer affordable travel options with basic amenities for budget-conscious travelers.</p>
+                            <div class="imgCtn">
+                                <img src="pexels-janine-speidel-1933619854-29869022.jpg" alt="Economy Bus" class="service-image" style="height: 300px; width: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <!-- Standard Bus Service -->
+                        <div class="col-md-4 col-12 mb-4">
+                            <h3 class="service-title">Standard Bus Service</h3>
+                            <p>Enjoy a comfortable journey with our standard buses, equipped with air conditioning and spacious seating.</p>
+                            <div class="imgCtn">
+                                <img src="pexels-duran-ekiz-177082092-16364220.jpg" alt="Standard Bus" class="service-image" style="height: 300px; width: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Economy Bus Service -->
-            <div class="col-md-4 col-12 mb-4">
-                <h3 class="service-title">Economy Bus Service</h3>
-                <p>Our economy buses offer affordable travel options with basic amenities for budget-conscious travelers.</p>
-                <div class="imgCtn">
-                    <img src="pexels-janine-speidel-1933619854-29869022.jpg" alt="Economy Bus" class="service-image">
-
-                </div>
-            </div>
-            <!-- Standard Bus Service -->
-            <div class="col-md-4 col-12 mb-4">
-                <h3 class="service-title">Standard Bus Service</h3>
-                <p>Enjoy a comfortable journey with our standard buses, equipped with air conditioning and spacious seating.</p>
-                <div class="imgCtn">
-                       <img src="pexels-duran-ekiz-177082092-16364220.jpg" alt="Standard Bus" class="service-image">
-                </div>
-            </div>
-        </div>
+            </section>
+            
     </div>
 </section>
+
 
     <!-- Booking Section -->
     <section id="booking" class="section bg-light">

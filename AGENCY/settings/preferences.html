@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
-        <!-- sidebar navigation-->
-         <nav class="sidebar">
-          <!-- Back Button -->
-<div class="mt-4 max-w-4xl mx-auto">
-  <button 
-    onclick="history.back()" 
-    class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-    &larr; Back
-  </button>
-</div>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <!-- Back Button -->
+            <!-- Home Icon -->
+          <div class="home-icon mt-4 max-w-4xl mx-auto">
+              <a href="../userpage.html" class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
+                  <i class="fa fa-home"></i> Home
+              </a>
+          </div>
             <ul>
                 <li><a href="setting.html">Account Settings</a></li>
                 <li><a href="preferences.html">Booking Preferences</a></li>
@@ -27,44 +28,50 @@
                 <li><a href="feed_sup.html">Feedback & Support</a></li>
                 <li><a href="system_info.html">System Information</a></li>
             </ul>
-         </nav>
-         <!-- Main Content -->
-          <main class="main-content">
-            
-        <!-- ===h3 for booking preferences== -->
-         <h2>Booking Preferences</h2>
-         <!--  form for booking preferences  -->
-           <form>
-              <label for="bus-type">Preferred Bus Type</label>
-              <!-- select bus type section -->
-               <select id="bus-type" name="bus-type">
-                  <option>VIP</option>
-                  <option>Standard</option>
-                  <option>Economy</option>
-               </select>
-               <!-- select bus type section ends here -->
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Booking Preferences Section -->
+            <h2>Booking Preferences</h2>
+            <!-- Form for Booking Preferences -->
+            <form>
+                <label for="bus-type">Preferred Bus Type</label>
+                <!-- Select Bus Type Section -->
+                <select id="bus-type" name="bus-type">
+                    <option>VIP</option>
+                    <option>Standard</option>
+                    <option>Economy</option>
+                </select>
+                <!-- Select Bus Type Section Ends Here -->
                 <label for="payment-method">Default Payment Method</label>
-                <!-- select selection for payment method begins -->
-                 <select name="payment-method" id="payment-method">
-                  <option value="credit-card">Credit Card</option>
-                  <option value="mobile-money">Mobile Money</option>
-                  <option value="orange-money">Orange Money</option>
-                  <option value="paypal">PayPal</option>
-                 </select>
-                 <!-- select payment method ends here -->
-                  <!-- notification selection begins -->
-                   <label for="notifications">Notifications Settings</label>
-                   <!-- select section for notification settings begins-->
-                    <select name="notifications" id="notifications">
-                      <option value="booking-updates">Booking Updates</option>
-                      <option value="promotions">Promotions</option>
-                      <option value="reminders">Reminders</option>
-                    </select>
-                    <!-- select section for notification ends here -->
-                     <button type="submit">Save Preferences</button>
-           </form>
-           </main>
-           </div>
-           
+                <!-- Select Payment Method Begins -->
+                <select name="payment-method" id="payment-method">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="mobile-money">Mobile Money</option>
+                    <option value="orange-money">Orange Money</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <!-- Select Payment Method Ends Here -->
+                <label for="notifications">Notifications Settings</label>
+                <!-- Select Notification Settings Begins -->
+                <select name="notifications" id="notifications">
+                    <option value="booking-updates">Booking Updates</option>
+                    <option value="promotions">Promotions</option>
+                    <option value="reminders">Reminders</option>
+                </select>
+                <!-- Select Notification Settings Ends Here -->
+                <button type="submit">Save Preferences</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-nav">
+        <a href="setting.html" class="text-center"><i class="fa fa-home"></i><span>Account</span></a>
+        <a href="preferences.html" class="text-center"><i class="fas fa-bus"></i><span>Preferences</span></a>
+        <a href="app_settings.html" class="text-center"><i class="fas fa-cogs"></i><span>App</span></a>
+        <a href="pri_sec.html" class="text-center"><i class="fa fa-shield-alt"></i><span>Privacy</span></a>
+        <a href="feed_sup.html" class="text-center"><i class="fa fa-info-circle"></i><span>Support</span></a>
+    </nav>
 </body>
 </html>

@@ -1,60 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recent Page</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+    <link rel="stylesheet" href="recent.css">
 </head>
 <body>
-    <div class="table-container">
-        <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Agency</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Departure Time</th>
-                <th>Arrival Time</th>
-                <th>Price</th>
-                <th>Status</th>
-            </tr>  
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024-12-27</td>
-                    <td>General Express</td>
-                    <td>Douala</td>
-                    <td>Bamenda</td>
-                    <td>9:00pm</td>
-                    <td>4:00am</td>
-                    <td>7000franc</td>
-                    <td><span class="status on-time">On Time</span></td>
-                </tr>
-                <tr>
-                    <td>2024-12-27</td>
-                    <td>Mens Travel</td>
-                    <td>Douala</td>
-                    <td>Yaounde</td>
-                    <td>2:20pm</td>
-                    <td>4:00pm</td>
-                    <td>10000franc</td>
-                    <td><span class="status delayed">Delayed</span></td>
-                </tr>
-                <tr>
-                    <td>2024-12-27</td>
-                    <td>Amour Mezam</td>
-                    <td>Douala</td>
-                    <td>Bamenda</td>
-                    <td>10:00am</td>
-                    <td>5:30pm</td>
-                    <td>6000franc</td>
-                    <td><span class="status cancelled">Cancelled</span></td>
-                </tr>
-            </tbody>
-        </table>
+  <div class="sidebar">
+    <!-- Sidebar Content -->
+    <div class="sidebar-content flex flex-col h-full justify-between">
+      <div>
+        <div class="logo-section my-4">
+          TravelGO
+        </div>
+        <div class="user-info">
+          <img src="../../profile/profile/a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="User avatar" class="avatar">
+          <div>Hello, Spectrasoft!<br>Let's Book your next BUS</div>
+        </div>
+        <nav class="mt-4 flex-grow">
+          <a href="../../userpage.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-home mr-2"></i> Home</a>
+          <a href="../../upcomingTrip.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-2"></i> Upcoming Trips</a>
+          <a href="../../more_destinations.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
+          <a href="recent.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
+          <a href="../../settings/setting.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
+        </nav>
+      </div>
+      <div class="p-4 border-t border-gray-700">
+        <a href="#logout" class="flex items-center text-red-500 hover:text-red-400"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <a href="../../userpage.html"><i class="fa fa-home"></i><span>Home</span></a>
+    <a href="../../upcomingTrip.html"><i class="fas fa-bus"></i><span>Trips</span></a>
+    <a href="../../more_destinations.html"><i class="fas fa-map-marker-alt"></i><span>Destinations</span></a>
+    <a href="recent.html"><i class="fa fa-calendar-alt"></i><span>History</span></a>
+    <a href="../../settings/setting.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+  </nav>
+
+  <div class="main-content">
+    <h1 class="text-3xl font-bold p-4"><i class="fa-solid fa-clock-rotate-left mr-4"></i>Booking History</h1>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Agency</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-12-27</td>
+            <td>General Express</td>
+            <td>Douala</td>
+            <td>Bamenda</td>
+            <td>9:00pm</td>
+            <td>4:00am</td>
+            <td>7000franc</td>
+            <td><span class="status on-time">On Time</span></td>
+          </tr>
+          <tr>
+            <td>2024-12-27</td>
+            <td>Mens Travel</td>
+            <td>Douala</td>
+            <td>Yaounde</td>
+            <td>2:20pm</td>
+            <td>4:00pm</td>
+            <td>10000franc</td>
+            <td><span class="status delayed">Delayed</span></td>
+          </tr>
+          <tr>
+            <td>2024-12-27</td>
+            <td>Amour Mezam</td>
+            <td>Douala</td>
+            <td>Bamenda</td>
+            <td>10:00am</td>
+            <td>5:30pm</td>
+            <td>6000franc</td>
+            <td><span class="status cancelled">Cancelled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>
