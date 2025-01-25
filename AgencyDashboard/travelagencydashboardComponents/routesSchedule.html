@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../agencyDashboard.css">
+    <title>Routes and Schedules</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/schedule.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container-fluid">
+       <!-- Collapsible Navbar for Small Screens -->
+       <nav class="navbar navbar-expand-md navbar-light d-md-none">
+        <a class="navbar-brand" href="agencyDashboard.html">Travel Agency</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../agencyDashboard.html"><i class="fa-solid fa-house mx-2"></i> Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/manageProfile.html"><i class="fa-solid fa-user mx-2"></i>Manage Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/routesSchedule.html"><i class="fa-solid fa-calendar-days mx-2"></i>Schedules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/feedback.html"><i class="fas fa-comments mx-2"></i>Feedbacks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/ppromotion.html"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/statictics.html"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/travelagencydashboardComponents/setting.html"><i class="fa-solid fa-gear mx-2"></i>Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block  sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <a href="../agencyDashboard.html"><li class="nav-item"><i class="fa-solid fa-house mx-2"></i> Overview</li></a>
+                        <a href="manageProfile.html"><li class="nav-item"><i class="fa-solid fa-user mx-2"></i>Manage Profile</li></a>
+                        <a href="routesSchedule.html"><li class="nav-item"><i class="fa-solid fa-calendar-days mx-2"></i> Schedules</li></a>
+                        <a href="feedback.html"><li class="nav-item"><i class="fas fa-comments mx-2"></i>Feedbacks</li></a>
+                        <a href="ppromotion.html"><li class="nav-item"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</li></a>
+                        <a href="statictics.html"><li class="nav-item"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</li></a>
+                        <a href="setting.html"><li class="nav-item"><i class="fa-solid fa-gear mx-2"></i>Settings</li></a>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <!-- Schedule Header -->
+                <div class="schedule-header d-flex justify-content-between align-items-center m-5">
+                  <h1 class="h2">Transport Schedules</h1>
+                  <div class="user-info d-flex align-items-center">
+                    <img src="../a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="User Profile Picture" class="rounded-circle mr-2" width="80" height="80">
+                    <span class="user-name">Spectrasoft</span>
+                  </div>
+                </div>
+              
+                <!-- Add New Schedule Form -->
+                <div class="card mb-4">
+                  <div class="card-header">Add New Schedule</div>
+                  <div class="card-body">
+                    <form id="newScheduleForm">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <label for="route">Route</label>
+                          <input type="text" class="form-control" id="route" placeholder="Enter route">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="departureTime">Departure Time</label>
+                          <input type="time" class="form-control" id="departureTime">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <label for="destination">Destination</label>
+                          <input type="text" class="form-control" id="destination" placeholder="Enter destination">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="date">Date</label>
+                          <input type="date" class="form-control" id="date">
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary mt-3">Add Schedule</button>
+                    </form>
+                  </div>
+                </div>
+              
+                <!-- Current Schedules -->
+                <div class="card">
+                  <div class="card-header">Current Schedules</div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table schedule-table">
+                        <thead>
+                          <tr>
+                            <th>Route</th>
+                            <th>Departure Time</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="currentSchedules">
+                          <tr>
+                            <td>Route A</td>
+                            <td>08:00 AM</td>
+                            <td>Boston</td>
+                            <td>2025-04-01</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                          <tr>
+                            <td>Route B</td>
+                            <td>10:00 AM</td>
+                            <td>Philadelphia</td>
+                            <td>2025-04-01</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                          <tr>
+                            <td>Route C</td>
+                            <td>01:00 PM</td>
+                            <td>Washington D.C.</td>
+                            <td>2025-04-01</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Past Schedules -->
+                <div class="card">
+                  <div class="card-header">Past Schedules</div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table schedule-table">
+                        <thead>
+                          <tr>
+                            <th>Route</th>
+                            <th>Departure Time</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="pastSchedules">
+                          <tr>
+                            <td>Route D</td>
+                            <td>09:00 AM</td>
+                            <td>New York</td>
+                            <td>2025-03-31</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                          <tr>
+                            <td>Route E</td>
+                            <td>11:00 AM</td>
+                            <td>Chicago</td>
+                            <td>2025-03-31</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                          <tr>
+                            <td>Route F</td>
+                            <td>02:00 PM</td>
+                            <td>Atlanta</td>
+                            <td>2025-03-31</td>
+                            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </main>
+              
+              
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../agencyDashboard.css">
+    <title>Settings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/settings.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Collapsible Navbar for Small Screens -->
+        <nav class="navbar navbar-expand-md navbar-light d-md-none">
+            <a class="navbar-brand" href="agencyDashboard.html">Travel Agency</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../agencyDashboard.html"><i class="fa-solid fa-house mx-2"></i> Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/manageProfile.html"><i class="fa-solid fa-user mx-2"></i>Manage Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/routesSchedule.html"><i class="fa-solid fa-calendar-days mx-2"></i>Schedules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/feedback.html"><i class="fas fa-comments mx-2"></i>Feedbacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/ppromotion.html"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/statictics.html"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/travelagencydashboardComponents/setting.html"><i class="fa-solid fa-gear mx-2"></i>Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block  sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <a href="../agencyDashboard.html"><li class="nav-item"><i class="fa-solid fa-house mx-2"></i> Overview</li></a>
+                        <a href="manageProfile.html"><li class="nav-item"><i class="fa-solid fa-user mx-2"></i>Manage Profile</li></a>
+                        <a href="routesSchedule.html"><li class="nav-item"><i class="fa-solid fa-calendar-days mx-2"></i> Schedules</li></a>
+                        <a href="feedback.html"><li class="nav-item"><i class="fas fa-comments mx-2"></i>Feedbacks</li></a>
+                        <a href="ppromotion.html"><li class="nav-item"><i class="fa-solid fa-rectangle-ad mx-2"></i>Promotions</li></a>
+                        <a href="statictics.html"><li class="nav-item"><i class="fa-solid fa-chart-simple mx-2"></i>Statistics</li></a>
+                        <a href="setting.html"><li class="nav-item"><i class="fa-solid fa-gear mx-2"></i>Settings</li></a>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="header d-flex justify-content-between align-items-center m-5">
+                    <h1 class="h2">Settings</h1>
+                    <div class="user-info d-flex align-items-center">
+                        <img src="../a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="User Profile Picture" class="rounded-circle mr-2" width="80" height="80">
+                        <span class="user-name">Spectrasoft</span>
+                    </div>
+                </div>
+            
+                <!-- Notification Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Notification Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="notificationSettings">Notification Settings</label>
+                                <select class="form-control" id="notificationSettings">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Language Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Language Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select class="form-control" id="language">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Account Management -->
+                <div class="card mb-4">
+                    <div class="card-header">Account Management</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="accountName">Change Name</label>
+                                <input type="text" class="form-control" id="accountName" placeholder="Enter new name">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm new password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Account</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Profile Management Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Profile Management</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="profileName">Profile Name</label>
+                                <input type="text" class="form-control" id="profileName" placeholder="Enter profile name">
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail">Profile Email</label>
+                                <input type="email" class="form-control" id="profileEmail" placeholder="Enter profile email">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Schedule Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Schedule Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="defaultScheduleView">Default Schedule View</label>
+                                <select class="form-control" id="defaultScheduleView">
+                                    <option>Daily</option>
+                                    <option>Weekly</option>
+                                    <option>Monthly</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Feedback Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Feedback Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="feedbackNotifications">Feedback Notifications</label>
+                                <select class="form-control" id="feedbackNotifications">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Promotion Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Promotion Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="promotionNotifications">Promotion Notifications</label>
+                                <select class="form-control" id="promotionNotifications">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Statistics Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Statistics Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="defaultStatisticsView">Default Statistics View</label>
+                                <select class="form-control" id="defaultStatisticsView">
+                                    <option>Summary</option>
+                                    <option>Detailed</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Privacy Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Privacy Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="privacyOptions">Privacy Options</label>
+                                <select class="form-control" id="privacyOptions">
+                                    <option>Public</option>
+                                    <option>Private</option>
+                                    <option>Friends Only</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Security Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Security Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="twoFactorAuthentication">Two-Factor Authentication</label>
+                                <select class="form-control" id="twoFactorAuthentication">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordChangeReminder">Password Change Reminder</label>
+                                <select class="form-control" id="passwordChangeReminder">
+                                    <option>Every 30 days</option>
+                                    <option>Every 60 days</option>
+                                    <option>Every 90 days</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Theme Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">Theme Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="themeSelection">Theme</label>
+                                <select class="form-control" id="themeSelection">
+                                    <option>Light</option>
+                                    <option>Dark</option>
+                                    <option>System Default</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            
+        </div>
+    </div>
+
+    <!-- Footer Section (Optional) -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">© 2025 Travel Agency. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- JavaScript and Bootstrap 4 dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
