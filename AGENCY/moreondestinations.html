@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Douala</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gallery img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .close-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.25rem;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showImage(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('imageModal').classList.add('open');
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('open');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Back Button -->
+    <div class="mb-4">
+        <a href="destinations.html" class="text-blue-500 hover:text-blue-700 flex items-center">
+            <i class="fas fa-arrow-left mr-2 text-blue-500"></i> Back to Destinations
+        </a>
+    </div>
+
+    <!-- Destination Details -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+        <img src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" alt="Douala Image" class="w-full h-64 object-cover">
+        <div class="p-6">
+            <h1 class="text-3xl font-bold mb-4">Discover Douala</h1>
+            <p class="text-gray-700 mb-4">Douala, the vibrant economic capital of Cameroon, is known for its bustling markets, stunning waterfront, and rich cultural heritage. It's a city that never sleeps, offering a mix of modern attractions and traditional charm.</p>
+
+            <h2 class="text-2xl font-bold mb-2 flex items-center"><i class="fas fa-map-signs mr-2 text-red-500"></i> Top Attractions</h2>
+            <ul class="list-disc list-inside mb-4 text-gray-700">
+                <li>Marche des Fleurs: A colorful flower market.</li>
+                <li>Douala Maritime Museum: Learn about the city's maritime history.</li>
+                <li>La Nouvelle Liberté: An iconic sculpture symbolizing freedom.</li>
+                <li>Plage de Youpwe: A beautiful beach to relax and unwind.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mb-2 flex items-center"><i class="fas fa-utensils mr-2 text-green-500"></i> Local Cuisine</h2>
+            <p class="text-gray-700 mb-4">Experience the culinary delights of Douala, from street food to fine dining. Don't miss out on trying Ndolé, a local dish made with bitter leaves, and grilled fish by the waterfront.</p>
+
+            <h2 class="text-2xl font-bold mb-2 flex items-center"><i class="fas fa-hotel mr-2 text-yellow-500"></i> Accommodations</h2>
+            <p class="text-gray-700 mb-4">Douala offers a range of accommodation options to suit every budget. From luxury hotels to cozy guesthouses, you'll find the perfect place to stay.</p>
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded">Book Your Trip</button>
+        </div>
+    </div>
+
+    <!-- Additional Images Section -->
+    <div>
+        <h2 class="text-2xl font-bold mb-4"><i class="fas fa-images mr-2 text-purple-500"></i> More Visuals</h2>
+        <div class="gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="profile/profile/Screenshot 2024-11-08 191550.png" alt="Additional Image 1" class="rounded-lg" onclick="showImage('profile/profile/Screenshot 2024-11-08 191550.png')">
+            <img src="profile/profile/Screenshot 2024-11-08 191654.png" alt="Additional Image 2" class="rounded-lg" onclick="showImage('profile/profile/Screenshot 2024-11-08 191654.png')">
+            <img src="profile/profile/one piece eps 1109.jpg" alt="Additional Image 3" class="rounded-lg" onclick="showImage('profile/profile/one piece eps 1109.jpg')">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">&times;</button>
+            <img id="modal-img" src="" alt="Modal Image">
+        </div>
+    </div>
+
+</body>
+</html>

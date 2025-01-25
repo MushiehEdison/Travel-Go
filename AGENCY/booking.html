@@ -6,193 +6,320 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .seat {
-            cursor: pointer;
-            background-color: #e2e8f0;
-            text-align: center;
-            line-height: 2rem;
-            border-radius: 0.25rem;
-        }
-        .selected {
-            background-color: #4CAF50 !important;
-            color: white !important;
-        }
-        .disabled {
-            background-color: #f87171 !important;
-            color: white !important;
-            cursor: not-allowed;
-        }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 250px;
+  background-color: #2d3748;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebar-content {
+  padding: 0.5em;
+}
+
+.logo-section {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #4a5568;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #4a5568;
+}
+
+.user-info .avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2d3748;
+  color: #fff;
+  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+
+.mobile-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobile-nav a span {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+  .main-content {
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+    padding-bottom: 4rem; /* Space for the mobile nav */
+  }
+  .header {
+    height: 800px;
+  }
+  .section {
+    margin: 1em;
+  }
+  /* Make user-info appear only on small screens */
+  .user-info {
+    display: flex;
+  }
+  /* Add additional styling for user-info on small screens if needed */
+  .user-info img.avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.seat {
+  cursor: pointer;
+  background-color: #e2e8f0;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 0.25rem;
+}
+
+.selected {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
+
+.disabled {
+  background-color: #f87171 !important;
+  color: white !important;
+  cursor: not-allowed;
+}
+
     </style>
 </head>
 <body class="bg-gray-100">
- <!-- Sidebar -->
- <div class="fixed h-full w-64 bg-gray-800 text-white flex flex-col">
+   <!-- Sidebar -->
+   <div class="sidebar">
     <!-- Logo Section -->
-    <div class="p-4 text-center font-bold text-2xl border-b border-gray-700">TravelGO</div>
+    <div class="logo-section my-4">
+      TravelGO
+    </div>
 
     <!-- User Info -->
-    <div class="p-4 flex items-center space-x-2 border-b border-gray-700">
+    <div class="user-info">
       <img alt="User avatar" class="rounded-full" height="40" src="images/5.JPG" width="40" />
       <div>Hello, Spectrasoft! <br> Let's Book your next BUS</div>
     </div>
 
     <!-- Navigation Links -->
     <nav class="mt-4 flex-grow">
-      <a href="booking.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-bookmark mr-2"></i>Booking</a>
-      <a href="https://www.google.com/maps" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-map-location-dot mr-2"></i> map</a>
-      <a href="Rating.spek/Rating.spek/index.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-building mr-2"></i> Review</a>
-      <a href="profile/profile/agencyProfilePage.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-user mr-2"></i> Agency Profile</a>
+      <a href="userpage.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-home mr-3"></i>Home</a>
+      <a href="booking.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-bookmark mr-3"></i>Book</a>
+      <a href="https://www.google.com/maps" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-map-location-dot mr-3"></i>Map</a>
+      <a href="Rating.spek/Rating.spek/index.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-building mr-3"></i>Review</a>
+      <a href="profile/profile/agencyProfilePage.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-3"></i>Agency</a>
     </nav>
 
     <!-- Logout -->
     <div class="p-4 border-t border-gray-700">
       <a href="#logout" class="flex items-center text-red-500 hover:text-red-400">
-        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+        <i class="fas fa-sign-out-alt mr-2"></i>Logout
       </a>
     </div>
   </div>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <a href="userpage.html"><i class="fa fa-home"></i><span>Home</span></a>
+    <a href="booking.html"><i class="fa-solid fa-bookmark"></i><span>Book</span></a>
+    <a href="https://www.google.com/maps"><i class="fa-solid fa-map-location-dot"></i><span>Map</span></a>
+    <a href="Rating.spek/Rating.spek/index.html"><i class="fas fa-comments"></i><span>Reviews</span></a>
+    <a href="profile/profile/agencyProfilePage.html"><i class="fas fa-bus"></i><span>Agency</span></a>
+  </nav>
 
-  <!-- Back Button -->
-<div class=" max-w-4xl mx-auto">
-  <button 
-    onclick="history.back()" 
-    class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600">
-    &larr; Back
-  </button>
-</div>
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-6">
-        <div class="flex justify-between items-center border-b pb-4">
-            <h1 class="text-xl font-bold text-black">Bus Booking Details</h1>
-            <button class="text-black text-xl">&times;</button>
-        </div>
-        <div class=" ">
-            <!-- Image and Header -->
-            <div class="relative">
-              <img src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" alt="Destination" class="w-full h-60 object-cover">
-              <div class="absolute top-0 left-0 p-4 text-white" >
-                <h3 class="text-sm font-light py-3" style="font-size: 1.5rem;">Destination</h3>
-                <h2 class="text-2xl font-light" style="font-size: 2.5rem;"><span class="text-white" ><i class="fa-solid fa-location-dot"></i></span> Douala</h2>
-                <div class="flex items-center mt-2">
-                  <span class="text-yellow-400 text-lg mt-5" style="font-size: 2rem;">★ ★ ★</span>
-                </div>
-              </div>
-            </div>
-        
-            <!-- Thumbnails -->
-            <div class="flex justify-center mt-2 space-x-2">
-              <div class="border-2 border-blue-500 rounded-md p-1">
-                <img src="profile/profile/pexels-eray-karatas-756165405-29148345.jpg" alt="Thumb" class="h-10 w-10 rounded-md">
-              </div>
-              <img src="profile/profile/a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="Thumb" class="h-10 w-10 rounded-md">
-              <img src="profile/profile/Screenshot 2024-11-08 191550.png" alt="Thumb" class="h-10 w-10 rounded-md">
-              <img src="profile/profile/one piece eps 1109.jpg" alt="Thumb" class="h-10 w-10 rounded-md">
-            </div>
-        
-            <!-- Travel Details -->
-            <div class="px-4 py-4">
-              <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                  <span class="text-black" style="font-size: 2.5rem;"><i class="fa-solid fa-location-dot"></i></span>
-                  <p class="text-gray-700 ml-2">from <span class="font-medium" style="font-size: 2rem;">Buea</span></p>
-                </div>
-                <div>
-                    <p class="text-xl font-semibold"> $10 </p>
-                    <span>A Ticket</span>
-                </div>
-                
-              </div>
-              <div class="flex justify-left items-center mt-3">
-                <p class="text-black-500">Dep Time <span class="font-large">09:45</span></p>
-                <p class="text-black-500 mx-5">Arr Time <span class="font-large">12:05</span></p>
-              </div>
-            </div>
-        <div class="mt-6">
-            <div class="flex border-b">
-                <button class="text-black font-semibold border-b-2 border-blue-900 pb-2 px-4">Available Seats</button>
-                <!-- <button class="text-black font-semibold pb-2 px-4">Cancellation Fee</button> -->
-            </div>
-            <div class="flex mt-4">
-                <div class="w-2/3">
-                    <p class="text-sm text-black mb-2">Click on Seat to select/ deselect</p>
-                    <div class="grid grid-cols-4 gap-2">
-                        <div class="seat" data-seat="1">1</div>
-                        <div class="seat" data-seat="2">2</div>
-                        <div class="seat" data-seat="3">3</div>
-                        <div class="seat" data-seat="4">4</div>
-                        <div class="seat" data-seat="5">5</div>
-                        <div class="seat" data-seat="6">6</div>
-                        <div class="seat" data-seat="7">7</div>
-                        <div class="seat" data-seat="8">8</div>
-                        <div class="seat" data-seat="9">9</div>
-                        <div class="seat" data-seat="10">10</div>
-                        <div class="seat" data-seat="11">11</div>
-                        <div class="seat" data-seat="12">12</div>
-                        <div class="seat" data-seat="13">13</div>
-                        <div class="seat" data-seat="14">14</div>
-                        <div class="seat" data-seat="15">15</div>
-                        <div class="seat" data-seat="16">16</div>
-                        <div class="seat" data-seat="17">17</div>
-                        <div class="seat" data-seat="18">18</div>
-                        <div class="seat" data-seat="19">19</div>
-                        <div class="seat" data-seat="20">20</div>
-                        <div class="seat" data-seat="21">21</div>
-                        <div class="seat" data-seat="22">22</div>
-                        <div class="seat" data-seat="23">23</div>
-                        <div class="seat" data-seat="24">24</div>
-                        <div class="seat" data-seat="25">25</div>
-                        <div class="seat" data-seat="26">26</div>
-                        <div class="seat" data-seat="27">27</div>
-                        <div class="seat" data-seat="28">28</div>
-                        <div class="seat" data-seat="29">29</div>
-                        <div class="seat" data-seat="30">30</div>
-                        <div class="seat" data-seat="31">31</div>
-                        <div class="seat" data-seat="32">32</div>
-                    </div>
-                    <div class="flex justify-center mt-4">
-                        <div class="text-center">
-                            <div class="w-4 h-4 bg-gray-300 inline-block rounded"></div>
-                            <p class="text-xs text-black">Available</p>
-                        </div>
-                        <div class="text-center ml-4">
-                            <div class="w-4 h-4 bg-red-500 inline-block rounded"></div>
-                            <p class="text-xs text-black">Already Booked</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/3 pl-6">
-                    <h3 class="text-lg font-semibold text-black">Booking Details</h3>
-                    <p class="text-sm text-black mt-2">Selected Seats (<span id="selected-count">0</span>):</p>
-                    <div class="bg-gray-100 p-4 mt-2 rounded">
-                        <p class="text-sm text-black">Total Fare: <span class="font-semibold">$<span id="total-fare">0</span></span></p>
-                    </div>
-                    <button class="bg-black text-white font-semibold py-2 px-4 rounded mt-4 w-full">Continue</button>
-                </div>
-            </div>
-        </div>
+  <!-- Main Content -->
+  <div class="main-content max-w-fill  bg-gray shadow-lg rounded-lg mt-0 p-6">
+    <div class="cover ">
+       <div class="flex justify-between items-center border-b pb-4">
+      <h1 class="text-xl font-bold text-black my-3">Bus Booking Details</h1>
+      <button class="text-black text-xl">&times;</button>
     </div>
+    <div>
+      <!-- Image and Header -->
+      <div class="relative">
+        <img src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" alt="Scenic view of Douala" class="w-full h-60 object-cover">
+        <div class="absolute top-0 left-0 p-4 text-white">
+          <h3 class="text-sm font-light py-3" style="font-size: 1.5rem;">Destination</h3>
+          <h2 class="text-2xl font-light" style="font-size: 2.5rem;"><span class="text-white"><i class="fa-solid fa-location-dot"></i></span> Douala</h2>
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-400 text-lg mt-5" style="font-size: 2rem;">★ ★ ★</span>
+          </div>
+        </div>
+      </div>
+      <!-- Thumbnails -->
+      <div class="flex justify-center mt-2 space-x-2">
+        <div class="border-2 border-blue-500 rounded-md p-1">
+          <img src="profile/profile/pexels-eray-karatas-756165405-29148345.jpg" alt="Thumbnail of Eray Karatas" class="h-10 w-10 rounded-md">
+        </div>
+        <img src="profile/profile/a24762f5-bd47-43d5-a5f5-552a55fd24fe.jpeg" alt="Thumbnail of scenic view" class="h-10 w-10 rounded-md">
+        <img src="profile/profile/Screenshot 2024-11-08 191550.png" alt="Screenshot example" class="h-10 w-10 rounded-md">
+        <img src="profile/profile/one piece eps 1109.jpg" alt="One Piece episode 1109" class="h-10 w-10 rounded-md">
+      </div>
+      <!-- Travel Details -->
+      <div class="px-4 py-4">
+        <div class="flex justify-between items-center border-t">
+          <div class="flex items-center">
+            <span class="text-black" style="font-size: 2.5rem;"><i class="fa-solid fa-location-dot"></i></span>
+            <p class="text-gray-700 ml-2">from <span class="font-medium" style="font-size: 1.4rem;">Buea</span></p>
+          </div>
+          <div>
+            <p class="text-xl font-semibold">$10</p>
+            <span>A Ticket</span>
+          </div>
+        </div>
+        <div class="flex justify-left items-center mt-3 border-b border-t py-4">
+          <p class="text-black-500"><span class="font-bold">Dep Time </span> <span class="font-large">09:45</span></p>
+          <p class="text-black-500 mx-5"><span class="font-bold">Arr Time </span> <span class="font-large">12:05</span></p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <div class="flex border-b">
+          <button class="text-black font-semibold border-b-2 border-blue-900 pb-2 px-4">Available Seats</button>
+        </div>
+        <div class="flex flex-col lg:flex-row mt-4">
+          <div class="w-full lg:w-2/3">
+            <p class="text-sm text-black mb-2">Click on Seat to select/deselect</p>
+            <div class="grid grid-cols-4 gap-2">
+              <div class="seat" data-seat="1">1</div>
+            <div class="seat" data-seat="2">2</div>
+            <div class="seat" data-seat="3">3</div>
+            <div class="seat" data-seat="4">4</div>
+            <div class="seat" data-seat="5">5</div>
+            <div class="seat" data-seat="6">6</div>
+            <div class="seat" data-seat="7">7</div>
+            <div class="seat" data-seat="8">8</div>
+            <div class="seat" data-seat="9">9</div>
+            <div class="seat" data-seat="10">10</div>
+            <div class="seat" data-seat="11">11</div>
+            <div class="seat" data-seat="12">12</div>
+            <div class="seat" data-seat="13">13</div>
+            <div class="seat" data-seat="14">14</div>
+            <div class="seat" data-seat="15">15</div>
+            <div class="seat" data-seat="16">16</div>
+            <div class="seat" data-seat="17">17</div>
+            <div class="seat" data-seat="18">18</div>
+            <div class="seat" data-seat="19">19</div>
+            <div class="seat" data-seat="20">20</div>
+            <div class="seat" data-seat="21">21</div>
+            <div class="seat" data-seat="22">22</div>
+            <div class="seat" data-seat="23">23</div>
+            <div class="seat" data-seat="24">24</div>
+            <div class="seat" data-seat="25">25</div>
+            <div class="seat" data-seat="26">26</div>
+            <div class="seat" data-seat="27">27</div>
+            <div class="seat" data-seat="28">28</div>
+            <div class="seat" data-seat="29">29</div>
+            <div class="seat" data-seat="30">30</div>
+            <div class="seat" data-seat="31">31</div>
+            <div class="seat" data-seat="32">32</div>
+              
+            </div>
+            <div class="flex justify-center mt-4">
+              <div class="text-center">
+                <div class="w-4 h-4 bg-gray-300 inline-block rounded"></div>
+                <p class="text-xs text-black">Available</p>
+              </div>
+              <div class="text-center ml-4">
+                <div class="w-4 h-4 bg-red-500 inline-block rounded"></div>
+                <p class="text-xs text-black">Already Booked</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/3 lg:pl-6 mt-6 lg:mt-0 mb-10">
+            <h3 class="text-lg font-semibold text-black">Booking Details</h3>
+            <p class="text-sm text-black mt-2">Selected Seats (<span id="selected-count">0</span>):</p>
+            <div class="bg-gray-100 p-4 mt-2 rounded">
+              <p class="text-sm text-black">Total Fare: <span class="font-semibold">$<span id="total-fare">0</span></span></p>
+            </div>
+            <button class="bg-black text-white font-semibold py-2 px-4 rounded mt-4 w-full">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  </div>
 
-    <script>
-        const seats = document.querySelectorAll('.seat');
-        const selectedCount = document.getElementById('selected-count');
-        const totalFare = document.getElementById('total-fare');
-        const seatPrice = 10; // Example seat price
+<script>
+  const seats = document.querySelectorAll('.seat');
+  const selectedCount = document.getElementById('selected-count');
+  const totalFare = document.getElementById('total-fare');
+  const seatPrice = 10; // Example seat price
 
-        seats.forEach(seat => {
-            seat.addEventListener('click', () => {
-                if (!seat.classList.contains('disabled')) {
-                    seat.classList.toggle('selected');
-                    updateSelectedCount();
-                }
-            });
-        });
+  seats.forEach(seat => {
+    seat.addEventListener('click', () => {
+      if (!seat.classList.contains('disabled')) {
+        seat.classList.toggle('selected');
+        updateSelectedCount();
+      }
+    });
+  });
 
-        function updateSelectedCount() {
-            const selectedSeats = document.querySelectorAll('.seat.selected');
-            const selectedSeatsCount = selectedSeats.length;
-            selectedCount.innerText = selectedSeatsCount;
-            totalFare.innerText = selectedSeatsCount * seatPrice;
-        }
-    </script>
+  function updateSelectedCount() {
+    const selectedSeats = document.querySelectorAll('.seat.selected');
+    const selectedSeatsCount = selectedSeats.length;
+    selectedCount.innerText = selectedSeatsCount;
+    totalFare.innerText = selectedSeatsCount * seatPrice;
+  }
+</script>
+
 </body>
 </html>

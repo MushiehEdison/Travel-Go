@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Travel Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+          
+            .sidebar {
+              width: 100%;
+              max-width: 250px;
+              background-color: #2d3748;
+              color: #fff;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100vh;
+              position: fixed;
+              left: 0;
+              top: 0;
+              overflow-y: scroll;
+            }
+            .sidebar::-webkit-scrollbar{
+                display: none;
+            }
+            .sidebar-content {
+              padding: 0.5em;
+            }
+            
+            .logo-section {
+              font-size: 1.5rem;
+              font-weight: bold;
+              text-align: center;
+              padding-bottom: 1rem;
+              border-bottom: 1px solid #4a5568;
+            }
+            
+            .user-info {
+              display: flex;
+              align-items: center;
+              padding: 1rem 0;
+              border-bottom: 1px solid #4a5568;
+            }
+            
+            .user-info .avatar {
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              margin-right: 10px;
+            }
+            .mobile-nav {
+              display: none;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: #2d3748;
+              color: #fff;
+              padding: 0.5rem;
+              justify-content: space-around;
+              align-items: center;
+              z-index: 10;
+            }
+            .mobile-nav a {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              color: #fff;
+              text-decoration: none;
+            }
+            .mobile-nav a span {
+              font-size: 0.75rem;
+              margin-top: 0.25rem;
+            }
+            
+            .main-content {
+              margin-left: 250px;
+              padding: 1rem;
+              flex-grow: 1;
+            }
+            
+            /* Media Queries */
+            @media (max-width: 768px) {
+              body{
+                margin: 0;
+                padding: 0;
+              }
+              .sidebar {
+                display: none;
+              }
+              
+              .mobile-nav {
+                display: flex;
+              }
+            
+              .main-content {
+                margin: 0;
+                padding: 0;
+                margin-left: 0;
+                padding-bottom: 4rem; /* Space for the mobile nav */
+              }
+            
+              /* Make user-info appear only on small screens */
+              .user-info {
+                display: flex;
+              }
+            
+              /* Add additional styling for user-info on small screens if needed */
+              .user-info img.avatar {
+                width: 64px;
+                height: 64px;
+              }
+            }
+            
+            </style>
+    <script>
+        function showSection(section) {
+            document.getElementById('luxury-services').classList.add('hidden');
+            document.getElementById('affordable-services').classList.add('hidden');
+            document.getElementById('easy-services').classList.add('hidden');
+            document.getElementById(section).classList.remove('hidden');
+        }
+        // Display the Luxury Coach Services section by default when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('luxury-services');
+        });
+    </script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="sidebar">
+        <!-- Sidebar Content -->
+          <div class="logo-section my-4">
+            TravelGO
+          </div>
+          <div class="user-info">
+            <img src="images/5.JPG" alt="User avatar" class="avatar">
+            <div>Hello, Spectrasoft!<br>Let's Book your next BUS</div>
+          </div>
+          <nav class="mt-4 flex-grow">
+            <a href="userpage.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-home mr-2"></i> Home</a>
+            <a href="upcomingTrip.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-2"></i> Upcoming Trips</a>
+            <a href="destinations.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
+            <a href="recent/recent/recent.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
+            <a href="./settings/setting.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
+          </nav>
+          <div class="p-4 border-t border-gray-700">
+            <a href="#logout" class="flex items-center text-red-500 hover:text-red-400"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+          </div>
+    
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav">
+        <a href="userpage.html"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="upcomingTrip.html"><i class="fas fa-bus"></i><span>Trips</span></a>
+        <a href="destinations.html"><i class="fas fa-map-marker-alt"></i><span>Destinations</span></a>
+        <a href="recent/recent/recent.html"><i class="fa fa-calendar-alt"></i><span>History</span></a>
+        <a href="./settings/setting.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="main-content">
+         <!-- Page Heading -->
+    <h1 class="text-3xl font-bold text-center mb-8">Explore Travel Services</h1>
+
+    <!-- Buttons to Choose Service Type -->
+    <div class="text-center mb-8">
+        <button onclick="showSection('luxury-services')" class="bg-blue-500 text-white px-4 py-2 rounded mx-2">Luxury</button>
+        <button onclick="showSection('easy-services')" class="bg-green-500 text-white px-4 py-2 rounded mx-2">Easy</button>
+        <button onclick="showSection('affordable-services')" class="bg-yellow-500 text-white px-4 py-2 rounded mx-2">Affordable</button>
+    </div>
+
+    <!-- Luxury Services Section -->
+    <section id="luxury-services" class="mb-12 hidden">
+        <h2 class="text-2xl font-bold mb-4">Luxury Coach Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Trip Card 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="Buses_in_the_United_States.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Douala - Yaounde</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Prestige Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 4000 XAF</span>
+                        <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> VIP
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Trip Card 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="Buses_in_the_United_States.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Douala - Yaounde</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Prestige Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 4000 XAF</span>
+                        <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> VIP
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Trip Card 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="Buses_in_the_United_States.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Douala - Yaounde</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Prestige Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 4000 XAF</span>
+                        <span class="ml-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> VIP
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-purple-200 text-purple-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Add more luxury service cards as needed -->
+        </div>
+    </section>
+
+    <!-- Easy Trip Services Section -->
+    <section id="easy-services" class="mb-12 hidden">
+        <h2 class="text-2xl font-bold mb-4">Easy BUS Bookings</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Trip Card 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="images/4.png" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Yaounde - Bafoussam</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Easy Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 3500 XAF</span>
+                        <span class="ml-2 bg-blue-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Easy
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-blue-200 text-blue-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Trip Card 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="images/4.png" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Yaounde - Bafoussam</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Easy Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 3500 XAF</span>
+                        <span class="ml-2 bg-blue-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Easy
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-blue-200 text-blue-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Trip Card 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="images/4.png" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Yaounde - Bafoussam</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Easy Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 3500 XAF</span>
+                        <span class="ml-2 bg-blue-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Easy
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-blue-200 text-blue-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Trip Card 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="images/4.png" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Yaounde - Bafoussam</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Easy Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 3500 XAF</span>
+                        <span class="ml-2 bg-blue-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Easy
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-blue-200 text-blue-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Add more easy trip service cards as needed -->
+        </div>
+    </section>
+
+    <!-- Affordable Services Section -->
+    <section id="affordable-services" class="mb-12 hidden">
+        <h2 class="text-2xl font-bold mb-4">Affordable Trips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Trip Card 2 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Buea - Limbe</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Budget Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 2000 XAF</span>
+                        <span class="ml-2 bg-green-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Budget
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-green-200 text-green-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+             <!-- Trip Card 2 -->
+             <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Buea - Limbe</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Budget Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 2000 XAF</span>
+                        <span class="ml-2 bg-green-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Budget
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-green-200 text-green-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+             <!-- Trip Card 2 -->
+             <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Publicity image" class="w-full h-48 object-cover" src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" />
+                <div class="p-4">
+                    <!-- Trip Route -->
+                    <h3 class="text-lg font-bold">Buea - Limbe</h3>
+                    <!-- Travel Agency Name -->
+                    <p class="text-sm text-gray-500">Agency: <span class="font-semibold">Budget Travel</span></p>
+                    <!-- Price, VIP Badge, and Star Icon -->
+                    <p class="flex items-center mt-2">
+                        <span>from 2000 XAF</span>
+                        <span class="ml-2 bg-green-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-star mr-1"></i> Budget
+                        </span>
+                    </p>
+                    <!-- Booking Button -->
+                    <button class="bg-green-200 text-green-700 px-4 py-2 rounded mt-4 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <a href="booking.html">Book Now</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Add more affordable service cards as needed -->
+        </div>
+    </section>
+      </div>
+   
+
+</body>
+</html>

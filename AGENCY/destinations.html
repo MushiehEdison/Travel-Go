@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Destinations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <style>
+        .sidebar {
+          width: 100%;
+          max-width: 250px;
+          background-color: #2d3748;
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100vh;
+          position: fixed;
+          left: 0;
+          top: 0;
+          overflow-y: scroll;
+        }
+        .sidebar::-webkit-scrollbar{
+            display: none;
+        }
+        .sidebar-content {
+          padding: 0.5em;
+        }
+        
+        .logo-section {
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-align: center;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #4a5568;
+        }
+        
+        .user-info {
+          display: flex;
+          align-items: center;
+          padding: 1rem 0;
+          border-bottom: 1px solid #4a5568;
+        }
+        
+        .user-info .avatar {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+        }
+        .mobile-nav {
+          display: none;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #2d3748;
+          color: #fff;
+          padding: 0.5rem;
+          justify-content: space-around;
+          align-items: center;
+          z-index: 10;
+        }
+        .mobile-nav a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #fff;
+          text-decoration: none;
+        }
+        .mobile-nav a span {
+          font-size: 0.75rem;
+          margin-top: 0.25rem;
+        }
+        
+        .main-content {
+          margin-left: 250px;
+          padding: 1rem;
+          flex-grow: 1;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+          body{
+            margin: 0;
+            padding: 0;
+          }
+          .sidebar {
+            display: none;
+          }
+          
+          .mobile-nav {
+            display: flex;
+          }
+        
+          .main-content {
+            margin: 0;
+            padding: 0;
+            margin-left: 0;
+            padding-bottom: 4rem; /* Space for the mobile nav */
+          }
+        
+          /* Make user-info appear only on small screens */
+          .user-info {
+            display: flex;
+          }
+        
+          /* Add additional styling for user-info on small screens if needed */
+          .user-info img.avatar {
+            width: 64px;
+            height: 64px;
+          }
+        }
+        
+        </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="sidebar">
+        <!-- Sidebar Content -->
+          <div class="logo-section my-4">
+            TravelGO
+          </div>
+          <div class="user-info">
+            <img src="images/5.JPG" alt="User avatar" class="avatar">
+            <div>Hello, Spectrasoft!<br>Let's Book your next BUS</div>
+          </div>
+          <nav class="mt-4 flex-grow">
+            <a href="userpage.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-home mr-2"></i> Home</a>
+            <a href="upcomingTrip.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-bus mr-2"></i> Upcoming Trips</a>
+            <a href="destinations.html" class="block p-3 hover:bg-gray-700"><i class="fas fa-map-marker-alt mr-2"></i> More Destinations</a>
+            <a href="recent/recent/recent.html" class="block p-3 hover:bg-gray-700"><i class="fa fa-calendar-alt mr-2"></i> Booking History</a>
+            <a href="./settings/setting.html" class="block p-3 hover:bg-gray-700"><i class="fa-solid fa-gear mr-2"></i> Settings</a>
+          </nav>
+          <div class="p-4 border-t border-gray-700">
+            <a href="#logout" class="flex items-center text-red-500 hover:text-red-400"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+          </div>
+    
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav">
+        <a href="userpage.html"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="upcomingTrip.html"><i class="fas fa-bus"></i><span>Trips</span></a>
+        <a href="destinations.html"><i class="fas fa-map-marker-alt"></i><span>Destinations</span></a>
+        <a href="recent/recent/recent.html"><i class="fa fa-calendar-alt"></i><span>History</span></a>
+        <a href="./settings/setting.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <!-- main content -->
+      <div class="main-content">
+        <!-- Page Heading -->
+    <h1 class="text-3xl font-bold text-center mb-8">More Destinations</h1>
+
+    <!-- Destinations Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Destination 1 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="profile/profile/pexels-duran-ekiz-177082092-16364220.jpg" alt="Douala Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Douala
+                </h2>
+                <p class="text-gray-700 mb-4">Explore the vibrant city of Douala with its bustling markets, stunning waterfront, and rich culture.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+        <!-- Destination 2 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="profile/profile/pexels-eray-karatas-756165405-29148345.jpg" alt="Yaoundé Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Yaoundé
+                </h2>
+                <p class="text-gray-700 mb-4">Discover Yaoundé, the capital city, known for its beautiful landscapes, monuments, and vibrant nightlife.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+        <!-- Destination 3 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="profile/profile/pexels-janine-speidel-1933619854-29869022.jpg" alt="Limbe Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Limbe
+                </h2>
+                <p class="text-gray-700 mb-4">Visit Limbe, known for its beautiful beaches, botanical garden, and wildlife center.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+        <!-- Destination 4 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="profile/profile/pexels-rescriptt-rescriptt-101153900-23119645.jpg" alt="Buea Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Buea
+                </h2>
+                <p class="text-gray-700 mb-4">Discover Buea, known for its picturesque landscapes and the majestic Mount Cameroon.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+        <!-- Destination 5 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="profile/profile/Screenshot 2024-11-08 191654.png" alt="Kribi Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Kribi
+                </h2>
+                <p class="text-gray-700 mb-4">Visit Kribi, famous for its pristine beaches, waterfalls, and fresh seafood.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+        <!-- Destination 6 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="Buses_in_the_United_States.jpg" alt="Bafoussam Image" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Bafoussam
+                </h2>
+                <p class="text-gray-700 mb-4">Experience Bafoussam, known for its rich cultural heritage and vibrant markets.</p>
+                <a href="moreondestinations.html" class="bg-blue-500 text-white px-3 py-2 rounded">Learn More</a>
+            </div>
+        </div>
+    </div>
+      </div>
+    
+
+</body>
+</html>
