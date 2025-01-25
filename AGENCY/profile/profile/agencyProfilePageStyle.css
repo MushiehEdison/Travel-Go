@@ -27,7 +27,7 @@ section{
     padding: 100px 0;
     color: #000000;
     text-align: center;
-    background: url('Screenshot\ 2024-11-08\ 191654.png') no-repeat center center fixed;
+    background: url('./slide-3.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden; /* Prevents content overflow on small screens */
     min-height: 100vh; /* Full height */
@@ -263,7 +263,7 @@ section{
 #booking {
     padding: 100px 0;
     text-align: center;
-    background: url('Screenshot\ 2024-11-08\ 185128.png') no-repeat center center fixed;
+    background: url('./slide-1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     position: relative;
