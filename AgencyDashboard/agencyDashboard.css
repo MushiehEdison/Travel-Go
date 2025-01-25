@@ -1,0 +1,613 @@
+body{
+    background-color: aliceblue;
+}
+
+/* sideBar ------------------------------------------- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 200px;
+    background-color: #fff;
+    padding: 48px 10px;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
+.sidebar ul {
+    margin-top: 0;
+}
+.sidebar ul a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+.sidebar ul a:hover{
+    background-color: rgb(236, 236, 236);
+}
+.sidebar ul a li{
+    padding: 1.2em 0;
+}
+/* main --------------------------------------- */
+.main-content {
+    margin-left: 200px; /* Matches the sidebar width */
+    margin-right: 210px; /* Matches the right section width */
+    padding: 20px;
+    max-width: calc(100% - 400px); /* Shrink based on side sections */
+    width: 100%; /* Allow responsiveness */
+    /* Optional background for clarity */
+}
+
+.main-content .mainsubSection{
+    box-shadow: 0 0 3px gray;
+    margin: 5px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+}
+.main-content .mainsubSection .sectionDescription h4{
+    font-size: 1.7rem;
+}
+
+.main-content .mainsubSection .value p{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.header {
+    border-bottom: 1px solid rgb(141, 141, 141);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows the header to wrap content */
+}
+
+.header .user-info {
+    box-shadow: 0 0 0 gray;
+    border-radius: 1em;
+    padding: 1em;
+    align-items: center;
+}
+
+.user-info .user-name {
+    font-size: 1.3rem;
+    margin-left: 10px; /* Add margin for spacing */
+}
+
+.user-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start;
+    }
+
+    .user-info {
+        order: -1; /* Make the profile appear before the page name */
+        width: 100%; /* Take full width on small screens */
+    }
+
+    .header h1 {
+        width: 100%; 
+    }
+}
+
+
+
+/* rightSection  -------------------------------------------------- */
+/* Right Section Container */
+.rightSection {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 220px;
+    padding: 20px;
+    display: block;
+    transition: 0.3s;  
+}
+
+/* Recent Activities Container */
+.rightSection .recentActivities .recent-activities {
+    width: 100%; /* Full width of the sidebar */
+    height: auto; /* Adjust height to fit content */
+    animation: slide-in 0.5s ease-in-out;
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Adjust Activity Item Spacing */
+.recent-activities .activity {
+    margin-bottom: 1rem;
+}
+
+/* Icon Styling */
+.recent-activities .icon i {
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0 4px;
+}
+
+/* Heading Styling */
+.recent-activities h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.recent-activities .btn {
+    width: 90%; /* Button spans most of the width */
+}
+
+/* Slide-In Animation */
+@keyframes slide-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsiveness ---------------------------------- */
+@media (max-width: 768px) {
+    .sidebar,
+    .rightSection {
+        display: none; /* Hide on smaller screens */
+    }
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%; /* Use full width on small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Feedback page of the agency DashBoard -------------------- */
+/* css/styles.css */
+.feedback-categories {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.list-group-item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-body img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.card-body h5 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-body p {
+    color: #555;
+}
+
+.card-body small {
+    color: #888;
+}
+
+.card-body .rating span {
+    color: #ffc107; /* Yellow color for stars */
+    font-size: 1.2rem;
+}
+
+.reply-section {
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reply-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+.reply-section button {
+    align-self: flex-end;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reply-section button:hover {
+    background: #0056b3;
+}
+
+/* Promotion page of the agency DashBoard -------------------- */
+/* css/styles.css */
+
+/* Promotions Page Main Container */
+.promotions-main {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Header */
+.promotions-header {
+    border-bottom: 1px solid #8d8d8d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows the header to wrap content */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.promotions-header .user-info {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0 gray;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.promotions-header .user-info .user-name {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.promotions-header .user-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Form */
+.promotions-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.promotions-form .form-group {
+    margin-bottom: 15px;
+}
+
+.promotions-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.promotions-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Promotions Card Deck */
+.promotions-card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.promotions-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.promotions-card .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.promotions-card .card-body {
+    padding: 20px;
+}
+
+.promotions-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.promotions-card .card-text {
+    margin-bottom: 10px;
+}
+
+.promotions-card .card-text small {
+    color: #6c757d;
+}
+
+.promotions-card .btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.promotions-card .btn-danger:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .promotions-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .promotions-header .user-info {
+        order: -1;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .promotions-header h1 {
+        width: 100%;
+    }
+
+    .promotions-form .form-group input,
+    .promotions-form .form-group textarea,
+    .promotions-form .form-group select {
+        width: 100%;
+    }
+
+    .promotions-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .promotions-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .promotions-card .card-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .promotions-card-deck {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .promotions-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* schedule page of the agency DashBoard -------------------- */
+/* css/styles.css */
+
+.schedule-header {
+    border-bottom: 1px solid #8d8d8d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.schedule-header .user-info {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0 gray;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.schedule-header .user-info .user-name {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.schedule-header .user-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.schedule-table {
+    margin-bottom: 20px;
+}
+
+.schedule-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-actions .btn {
+    margin-right: 10px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .schedule-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .schedule-header .user-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .schedule-header .user-name {
+        font-size: 1.2rem;
+    }
+
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+
+    .schedule-actions .btn {
+        margin: 5px 0;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-header {
+        font-size: 1.1rem;
+    }
+}
+
+/* Statistics Page Main Container -----------------------------------------*/
+/* Statistics Page Main Container */
+.statistics-main {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+/* Header */
+.statistics-header {
+    border-bottom: 1px solid #8d8d8d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.statistics-header .user-info {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0 gray;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.statistics-header .user-info .user-name {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.statistics-header .user-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Card Styles */
+.statistics-card {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-card .card-header {
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 20px;
+}
+
+.statistics-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.statistics-card canvas {
+    width: 100%;
+    height: 200px;
+}
+
+.list-group-item {
+    font-size: 1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .statistics-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .statistics-header .user-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .statistics-header .user-name {
+        font-size: 1.2rem;
+    }
+
+    .statistics-card .card-body {
+        padding: 15px;
+    }
+
+    .statistics-card .card-header {
+        font-size: 1.1rem;
+    }
+
+    .list-group-item {
+        font-size: 0.9rem;
+    }
+}
