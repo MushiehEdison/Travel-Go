@@ -21,7 +21,7 @@ body {
     text-decoration: none;
     position: relative;
     right: 20%;
-    color: lightskyblue;
+    color:  rgb(42, 109, 209);
     
   }
   /* styling Rating end */
@@ -101,7 +101,7 @@ body {
 
 /* adding styles to the stars  under rating score*/
   .rating-score .except{
-    color:  lightskyblue;
+    color:  rgb(235, 193, 9);
   }
 /* adding styles to the stars  under rating score*/
 
@@ -129,7 +129,7 @@ body {
   
   .progress {
     height: 10px;
-    background-color: lightskyblue;
+    background-color: rgb(255, 218, 52);
     margin-left: 10px;
     flex: 1;
     border-radius: 20px;
@@ -139,7 +139,7 @@ body {
 /* styling the whole review div start */
 
   .star{
-    color:  lightskyblue;
+    color:  rgb(235, 193, 9);
   }
   
   .reviews {
